@@ -1,0 +1,83 @@
+
+		.mui-segmented-control{border: none;}
+		.mui-segmented-control .mui-control-item{color:#000;border-color:#ffda42;border-left:none;border-bottom: 1px solid #fff;}
+		.mui-segmented-control .mui-control-item.mui-active{color: #ffda42;background-color: #fff;border-bottom: 1px solid #ffda42;}
+		.list_all .mui-table-view .mui-media-object{line-height:112px;max-width:112px;height:112px;}
+		@media screen and (max-width: 320px) {
+			.list_all .mui-table-view .mui-media-object{line-height:96px;max-width:96px;height:96px;}
+		}
+		.mui-ellipsis.all_img{display: flex;}
+		.mui-ellipsis.all_img span{flex: 1;}
+		.mui-ellipsis.all_img span .mui-icon img{width:15px;vertical-align:middle;position:relative;top:4px;}
+		.mui-ellipsis.all_img span em{font-style: normal;font-size: 14px;}
+		.red{color:red;}
+		.dingdan_user img{line-height: 42px;max-width: 42px;height: 42px;border-radius: 50%;}
+		.dingwei_name{ position:absolute;top:28px;left:50px;}
+		.mui-h6{font-size: 14px;text-align: right;}
+		.mui-h4, h4{font-size:15px;background:#ffda42;border:1px solid #ffda42;font-weight:normal;padding:5px 10px;border-radius:5px;}
+		.list_all .mui-control-content .mui-table-view{border-radius: 10px;margin: 10px;box-shadow: 0px 0px 9px #EDEDED;}
+		.list_all .mui-control-content .mui-table-view:before,.list_all .mui-control-content .mui-table-view:after,
+		.border_none.mui-table-view-cell:after,.mui-navigate-right:after, .mui-push-right:after{content:none}
+		.border_right.mui-table-view-cell:after{right:15px}
+		.mui-popup-title+.mui-popup-text{margin: 22px 0 0;    padding: 0 0 18px 0;}
+		.mui-icon.mui-icon-closeempty{position: relative;top: -9px;font-weight: bold;font-size: 32px;}
+		.tuikuan .mui-table-view .mui-media-object.mui-pull-left,.pingjia .mui-table-view .mui-media-object.mui-pull-left{line-height:42px;max-width:42px;height:42px;border-radius:6px;
+		box-shadow:0px 0px 3px #626262;}
+		.mui-popup-inner{padding: 15px 0 0 0;}
+		.mui-popover{opacity: 1;height: 180px;width: 180px;top: 228px;right: 17px;display: none;}
+		.mui-input-row label{padding: 11px 0;}
+		.tuikuanjine,.tuikuanyuanyin{ width:65%;display:inline-block;float:left;text-align:left;line-height:38px;margin:0;}
+		.mui-icon.mui-icon-arrowdown.mui-pull-right{position: absolute;top: 7px;right:20px;}
+		.mui-input-group{background: #efeff4;}
+		.mui-input-group .mui-input-row{background: #fff;}
+		.mui-input-group .mui-input-row:after{content: none;}
+		.mui-content-padded.shuoming{text-align:left;background:#fff;margin:0;padding:10px 15px}
+		.mui-popup-button.mui-popup-button-bold button{ margin:6px 0 0 0;background:#ffda42;border-radius:17px;width:160px;border:navajowhite;}
+		.mui-popup-button{color:#666;}
+		.mui-popup-button.mui-popup-button-bold{color: #ffda42;}
+		.wuliu .mui-table-view.wuliuxinxi .mui-table-view-cell{text-align: left;padding: 6px 15px;font-size: 15px;;}
+		.wuliu .mui-table-view-cell:after,.wuliu .mui-table-view.wuliuzhuangtai:before,.biankuang.mui-table-view:after{content: none;}
+		.wuliu .mui-table-view.wuliuzhuangtai .mui-media-body{text-align: left;}
+		.wuliuzhuangtai .mui-media-object.mui-pull-left{width:18px;height:18px;background:#767B7E;border-radius:50%;position:relative;top:10px;}
+		.wuliuzhuangtai .mui-media-object.mui-pull-left.active{background:#FECA34;}
+		.wuliuzhuangtai .mui-media-object.mui-pull-left:after{
+			position: absolute;
+    right: 36px;
+    top: -54px;
+    left: 9px;
+    width: 1px;
+    height: 128px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    z-index: -1;
+		}
+		.wuliuzhuangtai .mui-table-view-cell:first-child .mui-media-object.mui-pull-left:after{
+			position: absolute;
+    right: 36px;
+    top: 0px;
+    left: 9px;
+    width: 1px;
+    height: 70px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    z-index: -1;
+		}
+		.wuliuzhuangtai .mui-table-view-cell:last-child .mui-media-object.mui-pull-left:after{
+			position: absolute;
+     right: 36px;
+    top: -54px;
+    left: 9px;
+    width: 1px;
+    height: 95px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    z-index: -1;
+		}
+		
+	

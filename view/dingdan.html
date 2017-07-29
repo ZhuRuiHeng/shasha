@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/dingdan.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/new.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+	</head>
+	
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">订单</h1>
+		</header>
+		<div class="mui-content">
+			<!--选项卡-->
+		    <div style="padding: 10px 15px;background: #fff;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						全部
+					</a>
+					<a class="mui-control-item" href="#item2">
+						待收货
+					</a>
+					<a class="mui-control-item" href="#item3">
+						已收货
+					</a>
+					<a class="mui-control-item" href="#item4">
+						待评价
+					</a>
+					<a class="mui-control-item" href="#item5">
+						申诉
+					</a>
+				</div>
+			</div>
+			<!--内容-->
+			<div class="list_all">
+				<div id="item1" class="mui-control-content mui-active">
+					<!--确认收货-->
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media border_right">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg">
+								<div class="mui-media-body">
+									<p class="mui-ellipsis">
+										<span class="mui-pull-left mingcheng">限量</span><span class="mui-pull-right jiage">￥222</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right shuliang">×2</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img style="width:18px;" src="../images/baoyou@3x.png"></i>
+											<em>包邮</em>
+										</span>
+										<span style="text-align: center;">
+											<i class="mui-icon"><img src="../images/zhiyou@3x.png"></i>
+											<em>直邮</em>
+										</span>
+										<span style="text-align: right;">
+											<i class="mui-icon"><img style="width:11px;" src="../images/dingwei@3x.png"></i>
+											<em>地址</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img src="../images/ttiaoma@3x.png"></i>
+											<em>11111111111</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right heji">合计：￥<span class="red">222</span></span>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media border_none">
+							<p class="mui-ellipsis">
+								<span class="shenfen">买手</span>
+								<span class="mui-pull-right shijain">2017-2-2</span>
+							</p>
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table mui-navigate-right">
+									<div class="oa-contact-avatar mui-table-cell cell-one dingdan_user">
+										<img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+										<p class="dingwei_name">张三</p>
+									</div>
+									
+									<div class="oa-contact-content mui-table-cell mui-pull-right">
+										<p class="oa-contact-email mui-h6">
+											成交时间
+										</p>
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name" id="shouhuo">确认收货</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						<li>
+					</ul>
+					<!--确认收货结束-->
+					<!--去评价-->
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media border_right">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg">
+								<div class="mui-media-body">
+									<p class="mui-ellipsis">
+										<span class="mui-pull-left mingcheng">限量</span><span class="mui-pull-right jiage">￥222</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right shuliang">×2</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img style="width:18px;" src="../images/baoyou@3x.png"></i>
+											<em>包邮</em>
+										</span>
+										<span style="text-align: center;">
+											<i class="mui-icon"><img src="../images/zhiyou@3x.png"></i>
+											<em>直邮</em>
+										</span>
+										<span style="text-align: right;">
+											<i class="mui-icon"><img style="width:11px;" src="../images/dingwei@3x.png"></i>
+											<em>地址</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img src="../images/ttiaoma@3x.png"></i>
+											<em>11111111111</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right heji">合计：￥<span class="red">222</span></span>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media border_none">
+							<p class="mui-ellipsis">
+								<span class="shenfen">买手</span>
+								<span class="mui-pull-right shijain">2017-2-2</span>
+							</p>
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table mui-navigate-right">
+									<div class="oa-contact-avatar mui-table-cell cell-one dingdan_user">
+										<img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+										<p class="dingwei_name">张三</p>
+									</div>
+									
+									<div class="oa-contact-content mui-table-cell mui-pull-right">
+										<p class="oa-contact-email mui-h6">
+											成交时间
+										</p>
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name" id="pingjia">去评价</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						<li>
+					</ul>
+					<!--去评价结束-->
+					<!--退货退款-->
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media border_right">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg">
+								<div class="mui-media-body">
+									<p class="mui-ellipsis">
+										<span class="mui-pull-left mingcheng">限量</span><span class="mui-pull-right jiage">￥222</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right shuliang">×2</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img style="width:18px;" src="../images/baoyou@3x.png"></i>
+											<em>包邮</em>
+										</span>
+										<span style="text-align: center;">
+											<i class="mui-icon"><img src="../images/zhiyou@3x.png"></i>
+											<em>直邮</em>
+										</span>
+										<span style="text-align: right;">
+											<i class="mui-icon"><img style="width:11px;" src="../images/dingwei@3x.png"></i>
+											<em>地址</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis all_img">
+										<span>
+											<i class="mui-icon"><img src="../images/ttiaoma@3x.png"></i>
+											<em>11111111111</em>
+										</span>
+									</p>
+									<p class="mui-ellipsis">
+										<span class="mui-pull-right heji">合计：￥<span class="red">222</span></span>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media border_none">
+							<p class="mui-ellipsis">
+								<span class="shenfen">买手</span>
+								<span class="mui-pull-right shijain">2017-2-2</span>
+							</p>
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table mui-navigate-right">
+									<div class="oa-contact-avatar mui-table-cell cell-one dingdan_user">
+										<img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+										<p class="dingwei_name">张三</p>
+									</div>
+									
+									<div class="oa-contact-content mui-table-cell mui-pull-right">
+										<p class="oa-contact-email mui-h6">
+											成交时间
+										</p>
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name" id="tuihuotuikuan">退货退款</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						<li>
+					</ul>
+					<!--退货退款结束-->
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							2
+						</li>
+					</ul>
+				</div>
+				<div id="item3" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							3
+						</li>
+					</ul>
+				</div>
+				<div id="item4" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							4
+						</li>
+					</ul>
+				</div>
+				<div id="item5" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							5
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--确认收货弹窗-->
+			<div class="shouhuo" style="display: none;">
+				<div class="mui-popup mui-popup-in">
+					<div class="mui-popup-inner">
+						<div class="mui-popup-title">
+							确认收货
+						</div>
+						<div class="mui-popup-text">
+							您确认已经收到货物了吗？
+						</div>
+					</div>
+					<div class="mui-popup-buttons">
+						<span class="mui-popup-button" name="1">
+							取消
+						</span>
+						<span class="mui-popup-button mui-popup-button-bold" name="2">
+							确认
+						</span>
+					</div>
+				</div>
+				<!--遮罩-->
+				<div class="mui-popup-backdrop mui-active"></div>
+			</div>
+			<!--确认收货弹窗结束-->
+			<!--退货退款弹窗-->
+			<div class="tuikuan" style="display: none;">
+				<div class="mui-popup mui-popup-in">
+					<div class="mui-popup-inner">
+						<div class="mui-popup-title">
+							退货退款<a id="tuikuanbutton" class="mui-icon mui-icon-closeempty mui-pull-right"></a>
+						</div>
+						<div class="mui-popup-text" style="padding: 0;">
+							
+						</div>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;" class="">
+									<img class="mui-media-object mui-pull-left" src="http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg">
+									<div class="mui-media-body">
+										<p class="mui-ellipsis all_img">
+											<span id="">
+												<i class="mui-icon"><img src="../images/pinpai@3x.png"></i>
+												<em>商品</em>
+											</span>
+											<span id="">
+												<i class="mui-icon"><img src="../images/yanse@3x.png"></i>
+												<em>颜色</em>
+											</span>
+											<span id="">
+												<i class="mui-icon"><img src="../images/ccun@3x.png"></i>
+												<em>尺寸</em>
+											</span>
+										</p>
+										<p class="mui-ellipsis" style="text-align: left">￥<span class="red">222</span></p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>退款原因</label>
+								<p class="tuikuanyuanyin">
+									<span>
+										<select name="" id="">
+											<option value="">拍错了、多拍，不想要了</option>
+											<option value="">信息填写错误</option>
+											<option value="">缺货</option>
+										</select>
+									</span>
+									<span class="mui-icon mui-icon-arrowdown mui-pull-right"></span>
+								</p>
+							</div>
+							<div class="mui-input-row">
+								<label>退款金额</label>
+								<p class="tuikuanjine">￥<span class="red">222</span></p>
+							</div>
+						</form>
+						<div class="mui-content-padded shuoming">
+							<div class="mui-inline">退款说明</div>
+						</div>
+						<div class="row mui-input-row" style="padding: 0 11px;background: #fff;">
+							<textarea id="question" class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
+						</div>
+					</div>
+					<div class="mui-popup-buttons">
+						<span class="mui-popup-button mui-popup-button-bold">
+							<button id="tuikuan">申请退款</button>
+						</span>
+					</div>
+				</div>
+				<!--遮罩-->
+				<div class="mui-popup-backdrop mui-active"></div>
+			</div>
+			<!--退货退款弹窗结束-->
+			<!--去评价弹窗-->
+			<div class="pingjia" style="display: none;">
+				<div class="mui-popup mui-popup-in">
+					<div class="mui-popup-inner">
+						<div class="mui-popup-title">
+							评价订单<a id="pingjiabutton" class="mui-icon mui-icon-closeempty mui-pull-right"></a>
+						</div>
+						<div class="mui-popup-text" style="padding: 0;">
+							
+						</div>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;" class="">
+									<img class="mui-media-object mui-pull-left" src="http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg">
+									<div class="mui-media-body">
+										<p class="mui-ellipsis all_img">
+											<span id="">
+												<i class="mui-icon"><img src="../images/pinpai@3x.png"></i>
+												<em>商品</em>
+											</span>
+											<span id="">
+												<i class="mui-icon"><img src="../images/yanse@3x.png"></i>
+												<em>颜色</em>
+											</span>
+											<span id="">
+												<i class="mui-icon"><img src="../images/ccun@3x.png"></i>
+												<em>尺寸</em>
+											</span>
+										</p>
+										<p class="mui-ellipsis" style="text-align: left">￥<span class="red">222</span></p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>给卖家打分</label>
+								<p class="tuikuanjine">
+									<div class="icons mui-inline" style="margin-left: 6px;">
+										<i data-index="1" class="mui-icon mui-icon-star"></i>
+										<i data-index="2" class="mui-icon mui-icon-star"></i>
+										<i data-index="3" class="mui-icon mui-icon-star"></i>
+										<i data-index="4" class="mui-icon mui-icon-star"></i>
+										<i data-index="5" class="mui-icon mui-icon-star"></i>
+									</div>
+								</p>
+							</div>
+						</form>
+						<div class="mui-content-padded shuoming">
+							<div class="mui-inline">评价</div>
+						</div>
+						<div class="row mui-input-row" style="padding: 0 11px;background: #fff;">
+							<textarea id="question" class="mui-input-clear question" placeholder="请输入评价内容..."></textarea>
+						</div>
+					</div>
+					<div class="mui-popup-buttons">
+						<span class="mui-popup-button" value="1">下次再说</span>
+						<span class="mui-popup-button mui-popup-button-bold" value="2">确定评价</span>
+					</div>
+				</div>
+				<!--遮罩-->
+				<div class="mui-popup-backdrop mui-active"></div>
+			</div>
+			<!--去评价弹窗结束-->
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({  
+				swipeBack:true //启用右滑关闭功能
+			});
+			//确认收货
+			document.getElementById("shouhuo").addEventListener('tap', function() {
+				document.getElementsByClassName("shouhuo")[0].style.display = "block";
+			});
+			mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
+				var index = this.getAttribute("name");
+				if (index == 2) {
+					mui.toast('收货成功');
+				}else if(index == 1) {
+					mui.toast('你取消了确认收货');
+				};
+				document.getElementsByClassName("shouhuo")[0].style.display = "none";
+			});
+			//申请退款
+			document.getElementById("tuihuotuikuan").addEventListener('tap', function() {
+				document.getElementsByClassName("tuikuan")[0].style.display = "block";
+			});
+			document.getElementById("tuikuanbutton").addEventListener('tap', function() {
+				document.getElementsByClassName("tuikuan")[0].style.display = "none";
+			});
+			document.getElementById("tuikuan").addEventListener('tap', function() {
+				mui.toast('申请退款成功');
+				document.getElementsByClassName("tuikuan")[0].style.display = "none";
+			});
+			 //评价
+			document.getElementById("pingjia").addEventListener('tap', function() {
+				document.getElementsByClassName("pingjia")[0].style.display = "block";
+			});
+			document.getElementById("pingjiabutton").addEventListener('tap', function() {
+				document.getElementsByClassName("pingjia")[0].style.display = "none";
+			});
+			mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
+				var index = this.getAttribute("value");
+				if (index == 2) {
+					mui.toast('评价成功');
+				}else if(index == 1) {
+					mui.toast('你取消了评价');
+				};
+				document.getElementsByClassName("pingjia")[0].style.display = "none";
+			});
+			mui('.icons').on('tap','i',function(){
+			  	var index = parseInt(this.getAttribute("data-index"));
+			  	var parent = this.parentNode;
+			  	var children = parent.children;
+			  	if(this.classList.contains("mui-icon-star")){
+			  		for(var i=0;i<index;i++){
+		  				children[i].classList.remove('mui-icon-star');
+		  				children[i].classList.add('mui-icon-star-filled');
+			  		}
+			  	}else{
+			  		for (var i = index; i < 5; i++) {
+			  			children[i].classList.add('mui-icon-star')
+			  			children[i].classList.remove('mui-icon-star-filled')
+			  		}
+			  	}
+			  	starIndex = index;
+		  	});
+		  	
+		</script>
+	</body>
+
+</html>

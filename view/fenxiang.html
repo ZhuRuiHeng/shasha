@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>主题帖</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/new.css"/>
+	</head>
+	<style type="text/css">
+		span .mui-icon img{width: 22px;vertical-align: middle;position: relative;top: 4px;}
+		.mui-card-footer:before{background-color:#fff}
+		#card_inform .mui-card-content .mui-card-content-inner p{margin: 0;}
+		.mui-card-content-inner{padding: 15px 15px 0 15px;}
+		.mui-card-content-inner p span{margin-right: 10px;}
+		.pingjia_list .mui-table-view-cell>a:not(.mui-btn){white-space:inherit;}
+		.biankuang .juli_left{margin-left: 52px;}
+		.maijia_first{margin: 4px 0;}
+		.mj_xiangqing{padding-bottom: 100px;}
+		p.juli_left{color:#626262}
+		.biankuang .juli_left.huida{background: #F0F0F0;padding: 0 10px;color: #000;border-radius: 8px;}
+		.biankuang .juli_left.huida span{color: #5F9DFA;}
+		.mj_xiangqing .pingjia_list .yonghu_name .mui-pull-right{font-size: 14px;color:#626262;border:1px solid #999;padding:0 10px;border-radius:4px;}
+		.mj_xiangqing .pingjia_list .yonghu_name .mui-pull-right.huifu{background: #ffda42;border:1px solid #ffda42;}
+	</style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">分享帖</h1>
+		</header>
+		<div class="mui-content">
+			<!--头部-->
+			<div id="geren_inform">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img id="nice_img" class="mui-media-object mui-pull-left" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+							<div class="mui-media-body">
+								<p class="yonghu_name " id="nickname"></p>
+								<p class="mui-ellipsis">发帖日期  <span class="fatie_time" id="postReleasetime"></span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--轮播-->
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop" id="lunboimg">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div>
+					<!-- <div class="mui-slider-item">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div>  -->
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<!-- <div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="https://m.360buyimg.com/mobilecms/s720x322_jfs/t6229/194/2717208859/96869/c7f2af2f/5965f3d1N4ac43a71.jpg!q70.jpg">
+						</a>
+					</div> -->
+				</div>
+				<div class="mui-slider-indicator" id="lunborol">
+					<!-- <div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div> -->
+				</div>
+			</div>
+			<!--规格-->
+			<div id="card_inform" class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p id="dityname"></p>
+						<p style="color: #333;">
+							<span id="">
+								<i class="mui-icon"><img src="../images/pinpai@3x.png"/></i>
+								<em id="brand"></em>
+							</span>
+							<span id="">
+								<i class="mui-icon"><img src="../images/yanse@3x.png"/></i>
+								<em id="colour"></em>
+							</span>
+							<span id="">
+								<i class="mui-icon"><img src="../images/ccun@3x.png"/></i>
+								<em id="specification"></em>
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link"><span class="jiage" id="dityprice">￥1333-￥11111</span></a>
+					<a class="mui-card-link"><span class="fabu_time" id="releasetime"></span>发布</a>
+				</div>
+			</div>
+			<!--卖家信息-->
+			<div class="maijai maijia_first" id="maijia">
+				<ul class="mui-table-view biankuangs">
+					<li class="mui-table-view-cell maijia_title">卖家信息</li>
+				</ul>
+				<ul class="mui-table-view biankuang">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+							<div class="mui-media-body">
+								<p class="yonghu_name user_name">user_name</p>
+								<p class="mui-ellipsis">  
+									<span class="fatie_time"><img id="level" src="../images/star3.png"/></span>
+									<span class="mui-pull-right">
+										<img class="dingwei" src="../images/dingwei.png"/><em id="position"></em>
+									</span>
+								</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--卖家信息详情预加载mj_xiangqing.html-->
+			<div class="mj_xiangqing">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<p class="mui-pull-left pinglun" id="pinglun"><i></i><span id="pinglun_num">（）</span></p>
+						<p class="mui-pull-right dianzan" id="dianzan"><i></i><span id="dianzan_num">（）</span></p>
+					</li>
+				</ul>
+				<div class="maijai pingjia_list">
+					<!--1-->
+					<ul class="mui-table-view biankuang">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+								<div class="mui-media-body">
+									<p class="yonghu_name">
+										<span>姓名</span>
+										<span class="mui-pull-right">回复</span>
+									</p>
+									<p class="mui-ellipsis">  
+										<span class="fatie_time">3分钟前</span>
+									</p>
+								</div>
+								<p class="juli_left">信息化推进办公室张彦合同付款信息化信息化推进办公室张彦合同付款信息化信息化推进办公室张彦合同付款信息化信息化推进办公室张彦合同付款信息化</p>
+							</a>
+						</li>
+					</ul>
+					<!--2-->
+					<ul class="mui-table-view biankuang">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg">
+								<div class="mui-media-body">
+									<p class="yonghu_name">
+										<span>姓名</span>
+										<span class="mui-pull-right huifu">回复</span>
+									</p>
+									<p class="mui-ellipsis">  
+										<span class="fatie_time">3分钟前</span>
+									</p>
+								</div>
+								<p class="juli_left">信息化推进办公室张同付款信息公室张彦合同付款信息化</p>
+								<p class="juli_left huida"> <span>王二：</span>信息化推进办公室张同付款信息公室张彦合同付款信息化</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--输入弹窗-->
+			<div class="tanchuang" style="display: none;">
+				<div class="mui-popup mui-popup-in">
+					<div class="mui-popup-inner">
+						<div class="mui-popup-text">
+							请输入你的回复：
+						</div>
+						<div class="mui-popup-input">
+							<input type="text" autofocus="" placeholder="请输入你要回复的内容...">
+						</div>
+					</div>
+					<div class="mui-popup-buttons">
+						<span class="mui-popup-button" name="1">
+							取消
+						</span>
+						<span class="mui-popup-button mui-popup-button-bold" name="2">
+							确定
+						</span>
+					</div>
+				</div>
+				<div class="mui-popup-backdrop mui-active"></div>
+			</div>
+			<!--弹窗结束-->
+		</div>
+		<script src="../js/jquery-1.12.2.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/public.js"></script>
+		<script src="../js/fenxiang.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			
+				
+				mui.init({  
+					swipeBack:true //启用右滑关闭功能
+				});
+				//轮播图
+				var slider = mui("#slider");
+				document.getElementById("slider").addEventListener('toggle', function(e) {
+					if (e.detail.isActive) {
+						slider.slider({
+							interval: 5000
+						});
+					} else {
+						slider.slider({
+							interval: 0
+						});
+					}
+				});
+				
+		        
+		  //    function myhandler(){
+		  //       document.getElementsByClassName("tanchuang")[0].style.display = "block";
+				// mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
+				// 	var index = this.getAttribute("name");
+				// 	if (index == 2) {
+				// 		mui.toast('回复成功');
+				// 		var sum = num +1;
+				// 		pinglun.classList.add("active");
+				// 		pinglun_num.innerHTML="（"+sum+"）";
+				// 	}else {
+				// 		mui.toast('你点了取消按钮');
+				// 	};
+				// 	document.getElementsByClassName("tanchuang")[0].style.display = "none";
+				// });
+		  //       document.getElementById('pinglun').removeEventListener('tap',myhandler,false);
+		  //   };
+		   	//if(pinglun.getAttribute('class').indexOf('active') > -1){		   		
+		    	//pinglun.addEventListener('tap',myhandler,false);
+		   	//};
+		    
+		</script>
+	</body>
+
+</html>

@@ -1,6 +1,5 @@
 //热门推荐------------------------------------------------------
 var xmlhttp;
-var token = "b4447a01-1170-42ff-8e7b-45afb0d1caf9";
 if (window.XMLHttpRequest){
 	// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
 	xmlhttp=new XMLHttpRequest();	

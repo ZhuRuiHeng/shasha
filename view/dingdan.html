@@ -424,69 +424,9 @@
 			
 		</div>
 		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			mui.init({  
-				swipeBack:true //启用右滑关闭功能
-			});
-			//确认收货
-			document.getElementById("shouhuo").addEventListener('tap', function() {
-				document.getElementsByClassName("shouhuo")[0].style.display = "block";
-			});
-			mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
-				var index = this.getAttribute("name");
-				if (index == 2) {
-					mui.toast('收货成功');
-				}else if(index == 1) {
-					mui.toast('你取消了确认收货');
-				};
-				document.getElementsByClassName("shouhuo")[0].style.display = "none";
-			});
-			//申请退款
-			document.getElementById("tuihuotuikuan").addEventListener('tap', function() {
-				document.getElementsByClassName("tuikuan")[0].style.display = "block";
-			});
-			document.getElementById("tuikuanbutton").addEventListener('tap', function() {
-				document.getElementsByClassName("tuikuan")[0].style.display = "none";
-			});
-			document.getElementById("tuikuan").addEventListener('tap', function() {
-				mui.toast('申请退款成功');
-				document.getElementsByClassName("tuikuan")[0].style.display = "none";
-			});
-			 //评价
-			document.getElementById("pingjia").addEventListener('tap', function() {
-				document.getElementsByClassName("pingjia")[0].style.display = "block";
-			});
-			document.getElementById("pingjiabutton").addEventListener('tap', function() {
-				document.getElementsByClassName("pingjia")[0].style.display = "none";
-			});
-			mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
-				var index = this.getAttribute("value");
-				if (index == 2) {
-					mui.toast('评价成功');
-				}else if(index == 1) {
-					mui.toast('你取消了评价');
-				};
-				document.getElementsByClassName("pingjia")[0].style.display = "none";
-			});
-			mui('.icons').on('tap','i',function(){
-			  	var index = parseInt(this.getAttribute("data-index"));
-			  	var parent = this.parentNode;
-			  	var children = parent.children;
-			  	if(this.classList.contains("mui-icon-star")){
-			  		for(var i=0;i<index;i++){
-		  				children[i].classList.remove('mui-icon-star');
-		  				children[i].classList.add('mui-icon-star-filled');
-			  		}
-			  	}else{
-			  		for (var i = index; i < 5; i++) {
-			  			children[i].classList.add('mui-icon-star')
-			  			children[i].classList.remove('mui-icon-star-filled')
-			  		}
-			  	}
-			  	starIndex = index;
-		  	});
-		  	
-		</script>
+		<script src="../js/public.js"></script>
+		<script src="../js/dingdan.js"></script>
+		
 	</body>
 
 </html>

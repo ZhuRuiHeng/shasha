@@ -21,7 +21,11 @@ var getParam = function () {
 		    	var informArr   = "";
 		        var s           = JSON.parse(xmlhttp.responseText);
 		        var data        = s.data;
-		        var releasetime = document.getElementById("releasetime").innerHTML=data.userDityMsg.releasetime;
+		        var releasetime = data.userDityMsg.releasetime;
+				var newDate1    = new Date();
+				    newDate1.setTime(releasetime);
+				var shijian     = document.getElementById("releasetime").innerHTML=newDate1.toLocaleString();
+				var releasetime = newDate1.toLocaleString();
 		        var nickname    = document.getElementById("nickname").innerHTML=data.userDityMsg.nickname;
 		    	var nice_img    = document.getElementById("nice_img").setAttribute("src",data.userDityMsg.img);
 		    	var postReleasetime = document.getElementById("postReleasetime").innerHTML=data.userDityMsg.postReleasetime;
@@ -39,14 +43,15 @@ var getParam = function () {
 				var dianzan_num = document.getElementById("dianzan_num");
 				var samePerson  = data.userDityMsg.specification;
 				var lunboimg    = data.userDityMsg.dityimg;
+				var commment    = data.commentMsg.commment;
+				var pingjiaList = "";
+				var pingjiaAll = "";
 				var lunboStr="",lunboArr="",lunborol="",lunborols="";
 				console.log(data);
 		        
 		        //轮播图
 		        var result=lunboimg.split(",");
-		        console.log(result.length);
 				for(var i=0;i<result.length;i++){
-				  	console.log(result[i]);
 				  	var first  ="<div class=\"mui-slider-item mui-slider-item-duplicate\">"+
 									"<a href=\"#\">"+
 										"<img src=\""+result[0]+"\">"+
@@ -74,7 +79,45 @@ var getParam = function () {
 		        	var level = document.getElementById("level").setAttribute("src","../images/star"+data.userDityMsg.level+".png");
 		        }else{
 		        	document.getElementById("maijia").style.display="none";
-		        }	
+		        };
+		        //回复
+		       
+		        console.log(commment);	
+		        //  var newDate = new Date();
+				// newDate.setTime(1501324383000 * 1000);
+				// console.log(newDate.toLocaleDateString());
+				// console.log(newDate.toJSON());
+				// console.log(newDate.toLocaleTimeString());
+		        for(var i=0;i<commment.length;i++){
+		        	var timestamp = commment[i].commtime;
+					var newDate = new Date();
+					newDate.setTime(timestamp);
+					//console.log(newDate.toLocaleString());
+		        	var pingjiaList ="<ul class=\"mui-table-view biankuang\">"+
+										"<li class=\"mui-table-view-cell mui-media\">"+
+											"<a href=\"javascript:;\">"+
+												"<img class=\"mui-media-object mui-pull-left\" src=\""+commment[i].img+"\">"+
+													"<div class=\"mui-media-body\">"+
+														"<p class=\"yonghu_name\">"+
+															"<span>"+commment[i].nickname+"</span>"+
+															"<span class=\"mui-pull-right "+commment[i].id+"\" onclick=\"huifui("+commment[i].id+")\">回复</span>"+
+														"</p>"+
+														"<p class=\"mui-ellipsis\">  "+
+															"<span class=\"fatie_time\">"+newDate.toLocaleString()+"</span>"+
+														"</p>"+
+													"</div>"+
+												"<p class=\"juli_left\">"+commment[i].commcontent+"</p>"
+												for(var j=0;j<commment.commcontent.length;j++){
+													console.log(commment.commcontent.length)
+													pingjiaList+= "<p class=\"juli_left huida\"><span>王二：</span>信息化推进办公室张同付款信息公室张彦合同付款信息化</p>";
+												}
+											pingjiaList+="</a>"+
+										"</li>"+
+									"</ul>";
+						pingjiaAll+=pingjiaList;
+		        };
+		        document.getElementById("pingjia_list").innerHTML= pingjiaAll;
+		        
 		        //回复
 				mui(".pingjia_list").on('tap','.yonghu_name .mui-pull-right',function(){
 				  	document.getElementsByClassName("tanchuang")[0].style.display = "block";

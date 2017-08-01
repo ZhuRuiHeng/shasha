@@ -1,6 +1,5 @@
 	
 	var xmlhttp;
-	var dingdan
 	if (window.XMLHttpRequest){
 		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
 		xmlhttp=new XMLHttpRequest();	
@@ -11,71 +10,87 @@
 	}
 	xmlhttp.onreadystatechange=function(){
 	    if (xmlhttp.readyState==4 && xmlhttp.status==200){
-	        var informArr="";
-	        var s = JSON.parse(xmlhttp.responseText);
+	        var dingdan   = "";
+	        var dingdanList = "";
+	       	var s = JSON.parse(xmlhttp.responseText);
 	        var data = s.data;
 	        console.log(data);
 	            for(var i=0;i<data.length;i++){ 
-	                var dingdan="<ul class=\"mui-table-view\">"+
+	            	console.log(data[i].statusid);
+	            	var dingdan="<ul class=\"mui-table-view\" onclick=\"javascript:window.location.href='dingdan_inform.html?id='"+data[i].id+"'\">"+
 								"<li class=\"mui-table-view-cell mui-media border_right\">"+
 									"<a href=\"javascript:;\">"+
-										"<img class=\"mui-media-object mui-pull-left\" src=\"http://www.jq22.com/demo/jQueryWaterfallFlow20160830/img/02.jpg\">"+
+										"<img class=\"mui-media-object mui-pull-left\" src=\""+data[i].dityimg+"\">"+
 										"<div class=\"mui-media-body\">"+
 											"<p class=\"mui-ellipsis\">"+
-												"<span class=\"mui-pull-left mingcheng\">限量</span><span class=\"mui-pull-right jiage\">￥222</span>"+
+												"<span class=\"mui-pull-left mingcheng\">"+data[i].dityname+"</span><span class=\"mui-pull-right jiage\">￥"+data[i].dityprice+"</span>"+
 											"</p>"+
 											"<p class=\"mui-ellipsis\">"+
-												"<span class=\"mui-pull-right shuliang\">×2</span>"+
+												"<span class=\"mui-pull-right shuliang\">×"+data[i].transaumber+"</span>"+
 											"</p>"+
 											"<p class=\"mui-ellipsis all_img\">"+
 												"<span>"+
 													"<i class=\"mui-icon\"><img style=\"width:18px;\" src=\"../images/baoyou@3x.png\"></i>"+
-													"<em>包邮</em>"+
+													"<em>"+data[i].freight+"</em>"+
 												"</span>"+
 												"<span style=\"text-align: center;\">"+
 													"<i class=\"mui-icon\"><img src=\"../images/zhiyou@3x.png\"></i>"+
-													"<em>直邮</em>"+
+													"<em>"+data[i].freight+"</em>"+
 												"</span>"+
 												"<span style=\"text-align: right;\">"+
 													"<i class=\"mui-icon\"><img style=\"width:11px;\" src=\"../images/dingwei@3x.png\"></i>"+
-													"<em>地址</em>"+
+													"<em>"+data[i].position+"</em>"+
 												"</span>"+
 											"</p>"+
 											"<p class=\"mui-ellipsis all_img\">"+
 												"<span>"+
 													"<i class=\"mui-icon\"><img src=\"../images/ttiaoma@3x.png\"></i>"+
-													"<em>11111111111</em>"+
+													"<em>"+data[i].singlenum+"</em>"+
 												"</span>"+
 											"</p>"+
 											"<p class=\"mui-ellipsis\">"+
-												"<span class=\"mui-pull-right heji\">合计：￥<span class=\"red\">222</span></span>"+
+												"<span class=\"mui-pull-right heji\">合计：￥<span class=\"red\">"+data[i].total+"</span></span>"+
 											"</p>"+
 										"</div>"+
 									"</a>"+
 								"</li>"+
 								"<li class=\"mui-table-view-cell mui-media border_none\">"+
 									"<p class=\"mui-ellipsis\">"+
-										"<span class=\"shenfen\">买手</span>"+
-										"<span class=\"mui-pull-right shijain\">2017-2-2</span>"+
-									"</p>"+
-									"<div class=\"mui-slider-cell\">"+
-										"<div class=\"oa-contact-cell mui-table mui-navigate-right\">"+
-											"<div class=\"oa-contact-avatar mui-table-cell cell-one dingdan_user\">"+
-												"<img src=\"https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/dmas/pic/item/18899e510fb30f241f91f995c095d143ad4b0318.jpg\">"+
-												"<p class=\"dingwei_name\">张三</p>"+
-											"</div>"+
-											"<div class=\"oa-contact-content mui-table-cell mui-pull-right\">"+
-												"<p class=\"oa-contact-email mui-h6\">成交时间</p>"+
-												"<div class=\"mui-clearfix\">"+
-													"<h4 class=\"oa-contact-name\" id=\"tuihuotuikuan\">退货退款</h4>"+
+										"<span class=\"shenfen\">买手</span>"
+										if(xmlhttp){
+											var dealtime = data[i].dealtime;
+											var newDate    = new Date();
+										    newDate.setTime(dealtime);
+										    dingdan+="<span class=\"mui-pull-right shijain\">"+newDate.toLocaleString()+"</span>"
+										}
+									dingdan+="</p>"+
+												"<div class=\"mui-slider-cell\">"+
+													"<div class=\"oa-contact-cell mui-table mui-navigate-right\">"+
+														"<div class=\"oa-contact-avatar mui-table-cell cell-one dingdan_user\">"+
+															"<img src=\""+data[i].img+"\">"+
+															"<p class=\"dingwei_name\">"+data[i].nickname+"</p>"+
+														"</div>"+
+														"<div class=\"oa-contact-content mui-table-cell mui-pull-right\">"+
+															"<p class=\"oa-contact-email mui-h6\">成交时间</p>"+
+															"<div class=\"mui-clearfix\">"
+																if(data[i].statusid == 1){
+																	dingdan+="<h4 class=\"oa-contact-name\" id=\"shouhuo\">待收货</h4>"
+																}else if(data[i].statusid == 2){
+																	dingdan+="<h4 class=\"oa-contact-name\" id=\"\">已收货</h4>";
+																}else if(data[i].statusid == 3){
+																	dingdan+="<h4 class=\"oa-contact-name\" id=\"pingjia\">待评价</h4>";
+																}else if(data[i].statusid == 4){
+																	dingdan+="<h4 class=\"oa-contact-name\" id=\"tuihuotuikuan\">退货退款</h4>";
+																}
+															dingdan+="</div>"+
+														"</div>"+
+													"</div>"+
 												"</div>"+
-											"</div>"+
-										"</div>"+
-									"</div>"+
-								"<li>"+
-							"</ul>";
+											"<li>"+
+										"</ul>";
+							dingdanList+=dingdan;
 	            };
-	            document.getElementById("item1").innerHTML(item1);
+	            //document.getElementById("item1").innerHTML= dingdanList;
 	    }
 	};
 	//console.log(apiRoot+"/order/oderAll.do");

@@ -1,6 +1,5 @@
 
 //社区------------------------------------------------------
-
 var xmlhttp;
 if (window.XMLHttpRequest){
 	// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -40,7 +39,8 @@ xmlhttp.onreadystatechange=function(){
             };
     }
 };
-//console.log(apiRoot+"/posts/getpostsAll.do");
-xmlhttp.open("GET",apiRoot+"/posts/getpostsAll.do",true);
+//console.log(apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1");
+//?id="+id
+xmlhttp.open("GET",apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send();

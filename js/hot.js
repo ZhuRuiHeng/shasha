@@ -12,12 +12,12 @@ xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200){
         var informArr="";
         var s = JSON.parse(xmlhttp.responseText);
-        var data = s.data.shopUser;
-        console.log(s);
+        var data = s.data;
+       // console.log(data);
 		for(var i=0;i<data.length;i++){
     		//console.log(data[i].dityimg)
     		var num=i+1;
-       		var informStr="<div class=\"swiper-slide\" style=\"opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;\">"+
+       		var informStr="<div class=\"swiper-slide\" style=\"opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;\" onclick=\"shijian(this,"+data[i].dityprice+")\">"+
 							"<img src=\""+data[i].dityimg+"\" class=\"main-img\">"+
 							"<p class=\"tent\"><span>"+data[i].dityname+"</span><span>￥<i>"+data[i].dityprice+"</i></span></p>"+
 						  "</div>";
@@ -26,6 +26,10 @@ xmlhttp.onreadystatechange=function(){
 		document.getElementById("hotimg").innerHTML=informArr;
     }
 }
-xmlhttp.open("GET",apiRoot+"/commdity/CommByIntereid.do?token="+token,true);
+//http://192.168.1.11:8080/salsa/commdity/getMore.do
+xmlhttp.open("GET",apiRoot+"/commdity/getMore.do?token="+token,true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send();
+function shijian(obj,id){
+	alert(id);
+}

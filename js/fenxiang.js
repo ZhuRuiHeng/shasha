@@ -1,4 +1,5 @@
 //热门推荐------------------------------------------------------
+var token ="b49ead51-240b-4c70-9044-ba266afd0799";
 
 var getParam = function () {
    	 try{
@@ -93,6 +94,7 @@ var getParam = function () {
 					var newDate = new Date();
 					newDate.setTime(timestamp);
 					console.log(commment[i].replyContent.length);
+
 		        	var pingjiaList ="<ul class=\"mui-table-view biankuang\">"+
 										"<li class=\"mui-table-view-cell mui-media\">"+
 											"<a href=\"javascript:;\">"+
@@ -100,7 +102,7 @@ var getParam = function () {
 													"<div class=\"mui-media-body\">"+
 														"<p class=\"yonghu_name\">"+
 															"<span>"+commment[i].nickname+"</span>"+
-															"<span class=\"mui-pull-right huifu"+commment[i].id+"\" onclick=\"huifu(this,"+commment[i].uid+","+data.userDityMsg.postsid+","+commment[i].pcommid+")\">回复</span>"+
+															"<span class=\"mui-pull-right huifu"+commment[i].id+"\" onclick=\"huifu(this,"+commment[i].uid+","+data.userDityMsg.id+","+commment[i].pcommid+")\">回复</span>"+
 														"</p>"+
 														"<p class=\"mui-ellipsis\">  "+
 															"<span class=\"fatie_time\">"+newDate.toLocaleString()+"</span>"+
@@ -108,7 +110,7 @@ var getParam = function () {
 													"</div>"+
 												"<p class=\"juli_left\">"+commment[i].commcontent+"</p>"
 												for(var j=0;j<commment[i].replyContent.length;j++){
-													console.log(commment[i].replyContent.length)
+													console.log("帖子id"+data.userDityMsg.id);
 													pingjiaList+= "<p class=\"juli_left huida\">"+commment[i].replyContent[j].content+"</p>";
 												}
 											pingjiaList+="</a>"+
@@ -163,6 +165,7 @@ var getParam = function () {
 					        		if(data.info=="增加评论成功"){
 					        			//plus.nativeUI.toast('已提交后台审核');
 					        			mui.toast("评论成功，感谢评论！");
+					        			//location.reload();
 					        		}else{ 
 					        			//plus.nativeUI.toast('提交失败');
 					        			mui.toast("评论失败");
@@ -217,7 +220,7 @@ window.onload = function () {
     console.log(getParam());
 }
 //回复接口
-function huifu(obj,uid,postsid,pcommid){
+function huifu(obj,pid,postsid,pcommid){
 	document.getElementsByClassName("tanchuang")[0].style.display = "block";
 	mui(".mui-popup-buttons").on('tap','.mui-popup-button',function(){
 		var index = this.getAttribute("name");
@@ -225,7 +228,7 @@ function huifu(obj,uid,postsid,pcommid){
 			var commcontent1 = document.getElementById("commcontent").value;
 		//清空input框
 		document.getElementById('commcontent').value="";
-		console.log(commcontent1+","+postsid+","+token +","+ uid+","+pcommid);
+		console.log(commcontent1+","+postsid+","+token +","+ pid+","+pcommid);
 		 $.ajax({
 	        	type:"post",
 	        	url : apiRoot+"/posts/postsReply.do",
@@ -233,7 +236,7 @@ function huifu(obj,uid,postsid,pcommid){
 	        		  commcontent : commcontent1,
 	        		        token : token,
 	        	          postsid : postsid,
-	        	              uid : uid,
+	        	              pid : pid,
 	        	          pcommid : pcommid
 	        		},
 	        	dataType : 'json',
@@ -243,6 +246,7 @@ function huifu(obj,uid,postsid,pcommid){
 	        		if(data.info=="回复成功"){
 	        			//plus.nativeUI.toast('已提交后台审核');
 	        			mui.toast('回复成功');
+	        			//location.reload();
 	        		}else{ 
 	        			//plus.nativeUI.toast('提交失败');
 	        			mui.toast("回复失败");

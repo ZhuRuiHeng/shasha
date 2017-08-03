@@ -1,4 +1,5 @@
-	
+	var token = "b49ead51-240b-4c70-9044-ba266afd0799";
+	console.log(token);
 	var xmlhttp;
 	if (window.XMLHttpRequest){
 		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -13,10 +14,11 @@
 	        var dingdan   = "";
 	        var dingdanList = "";
 	       	var s = JSON.parse(xmlhttp.responseText);
-	        var data = s.data;
+	        var data = s.data.addressid;
+	        //console.log(xmlhttp.responseText+00000);
 	        console.log(data);
 	            for(var i=0;i<data.length;i++){ 
-	            	console.log(data[i].statusid);
+	            	//console.log(data[i].statusid);
 	            	var dingdan="<ul class=\"mui-table-view\" onclick=\"javascript:window.location.href='dingdan_inform.html?id="+data[i].id+"\">"+
 								"<li class=\"mui-table-view-cell mui-media border_right\">"+
 									"<a href=\"javascript:;\">"+
@@ -57,7 +59,7 @@
 												"</span>"+
 											"</p>"+
 											"<p class=\"mui-ellipsis\">"+
-												"<span class=\"mui-pull-right heji\">合计：￥<span class=\"red\">"+data[i].total+"</span></span>"+
+												"<span class=\"mui-pull-right heji\">合计：￥<span class=\"red\">"+data[i].totalprice+"</span></span>"+
 											"</p>"+
 										"</div>"+
 									"</a>"+
@@ -66,9 +68,10 @@
 									"<p class=\"mui-ellipsis\">"+
 										"<span class=\"shenfen\">买手</span>"
 										if(xmlhttp){
-											var dealtime = data[i].dealtime;
+											var releasetime = data[i].releasetime;
 											var newDate    = new Date();
-										    newDate.setTime(dealtime);
+										    newDate.setTime(releasetime);
+										   // console.log(newDate.toLocaleString());
 										    dingdan+="<span class=\"mui-pull-right shijain\">"+newDate.toLocaleString()+"</span>"
 										}
 									dingdan+="</p>"+
@@ -149,14 +152,14 @@
 		//已完成
 		function wancheng(obj,id){
 			console.log("此订单已完成"+id);
-		}
+		};
 		//申请退款
 		function tuihuotuikuan(obj,id){
 
 			var tuikuan="<div class=\"mui-popup mui-popup-in\">"+
 						"<div class=\"mui-popup-inner\">"+
 							"<div class=\"mui-popup-title\">退货退款"+
-								"<a id=\"tuikuanbutton\" class=\"mui-icon mui-icon-closeempty mui-pull-right\"></a>"+
+								"<span id=\"tuikuanbutton\" class=\"mui-icon mui-icon-closeempty mui-pull-right\" href=\"javascript:;\" onclick=\"close()\"></span>"+
 							"</div>"+
 							"<div class=\"mui-popup-text\" style=\"padding: 0;\">"+
 							"</div>"+
@@ -179,7 +182,7 @@
 													"<em>尺寸</em>"+
 												"</span>"+
 											"</p>"+
-											"<p class=\"mui-ellipsis\" style=\"text-align: left\">￥<span class=\"red\">222</span></p>"+
+											"<p class=\"mui-ellipsis\" style=\"text-align: left\">￥<span class=\"red\" href=\"javascript:;\">222</span></p>"+
 										"</div>"+
 									"</a>"+
 								"</li>"+
@@ -212,7 +215,7 @@
 						"</div>"+
 						"<div class=\"mui-popup-buttons\">"+
 							"<span class=\"mui-popup-button mui-popup-button-bold\">"+
-								"<button id=\"tuikuan\">申请退款</button>"+
+								"<button id=\"tuikuan\" onclick=\"tuikuan()\">申请退款</button>"+
 							"</span>"+
 						"</div>"+
 					"</div>"+
@@ -226,7 +229,7 @@
 			var pingjia="<div class=\"mui-popup mui-popup-in\">"+
 							"<div class=\"mui-popup-inner\">"+
 								"<div class=\"mui-popup-title\">"+
-									"评价订单<a id=\"pingjiabutton\" class=\"mui-icon mui-icon-closeempty mui-pull-right\"></a>"+
+									"评价订单<a id=\"pingjiabutton\" href=\"javascript:;\" class=\"mui-icon mui-icon-closeempty mui-pull-right\" onclick=\"close()\"></a>"+
 								"</div>"+
 							"<div class=\"mui-popup-text\" style=\"padding: 0;\">"+
 							"</div>"+
@@ -285,7 +288,7 @@
 					document.getElementsByClassName("pingjia")[0].style.display = "block";
 		}
 
-
+		
 
 		// document.getElementById("tuihuotuikuan").addEventListener('tap', function() {
 		// 	  document.getElementsByClassName("tuikuan")[0].style.display = "block";
@@ -332,3 +335,8 @@
 		  	}
 		  	starIndex = index;
 	  	});
+//关闭退货退款弹窗
+		function tuikuan(){
+			alert(1);
+			document.getElementsByClassName("tuikuan")[0].style.display = "none";
+		}

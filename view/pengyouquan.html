@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="email=no" name="format-detection" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+  	<title></title>
+    <link rel="stylesheet" type="text/css" href="../css/weui.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/my.css"> -->
+     <script type="text/javascript" src="../js/jquery-1.12.2.js"></script> 
+   <script type="text/javascript">
+       
+  window.onload = function () {
+        setTimeout(scrollTo,0,0,0);
+    };
+  //去除iOS和Android中的输入URL的控件条
+  </script>
+</head>
+<style type="text/css">
+header{line-height: inherit;}
+
+.my1-head {
+    background: #79c28a;
+    height: 200px;
+    width: 100%;
+}
+.nickname h4,.tool-right a,.top-content .jifen{
+  color:#fff;
+}
+.my1-top{
+      padding: 36px 0;
+}
+body{background: #fff;}
+.weui-badge.weui-badge_dot,.weui-cell,.weui-article,.box_info,header,p.weui-media-box__desc{background-color: #fff;color:#626262;}
+header{position: relative;color: #6ebf95;  border-bottom: 1px solid #ddd;}
+.weui-media-box.weui-media-box_text .weui-media-box__desc{-webkit-line-clamp:1111;font-size: 14px;color: #333}
+.weui-article{padding: 0 15px;}
+.weui-article section,.weui-article p{margin-bottom: 0;}
+.weui-article h3{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+p.weui-media-box__desc{padding-left: 54px;line-height: 22px;}
+.box_info{border-bottom: 1px solid #ddd;}
+.speak_inform .box_info{padding-left: 50px;}
+.weui-media-box__desc{-webkit-line-clamp:inherit;}
+.speak{margin-bottom: 60px;}
+.move .buttons p em{
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    width: 27px;
+}
+.move .buttons p{
+  display: inline-block;
+  width: 53px;
+    text-align: left;
+}
+.move .buttons p.good em{
+    background: url(../images/article_btn_good_n.png) no-repeat 0 2px;
+    background-size: 18px;
+}
+.move  .buttons p.good.active em{
+    background: url(../images/article_btn_good_s.png) no-repeat 0 2px;
+    background-size: 18px;
+}
+.move .buttons p.news em{
+    background: url(../images/article_btn_message.png) no-repeat 0 5px;
+    background-size: 18px;
+}
+.move .buttons p.news.active em{
+    background: url(../images/article_btn_good_s.png) no-repeat 0 5px;
+    background-size: 18px;
+}
+.speak .speak_inform .weui-cell__hd button{
+  background-color: #6ebf95;
+  color: #fff;
+    border: 1px solid #6ebf95;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    padding: 5px 13px;
+}
+.box_info {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
+}
+.newsText{
+  background-color: #fff;
+  text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.newsText input{
+  border:1px solid #ddd;
+  border-radius: 15px;
+  width: 240px;
+  height: 32px;
+  line-height: 32px;
+}
+.newsText button{
+  padding: 15px;
+  color: #000;
+}
+.wrap .key{
+        padding: 4px 10px;
+    display: flex;
+}
+.wrap .key p{
+    flex: 1;
+    text-align: center;
+}
+.item{
+    height: 16px;
+    display: inline-block;
+    padding: 6px 0px;
+    vertical-align: middle;
+}
+.key a{
+    color:#5d7895;  
+    cursor: pointer;  
+}
+.item i{
+    margin-right: 7px;
+}
+.ui-num{
+    margin-right: 0!important;
+}
+.ui-icon,.ui-like,.ui-share{
+    vertical-align: -3px;
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    font-size: 0;
+    overflow: hidden;
+    -webkit-text-size-adjust: none;
+}
+.like{
+    background: url(../images/article_btn_good_n.png) no-repeat center;
+    background-size: 18px; 
+}
+.like.active{
+    background: url(../images/article_btn_good_s.png) no-repeat center;
+    background-size: 18px; 
+}
+.review{
+    background: url(../images/article_btn_message.png) no-repeat center;
+    background-size: 18px; 
+}
+.review.active{
+    background: url(../images/community_btn_massages.png) no-repeat center;
+    background-size: 18px; 
+}
+.share{
+    background: url(../images/article_btn_good_n.png) no-repeat center;
+    background-size: 18px; 
+}
+.share.active{
+    background: url(../images/article_btn_good_s.png) no-repeat center;
+    background-size: 18px; 
+}
+.item-line{
+    font-size: 0;
+    width: 1px;
+    height: 11px;
+    margin-right: 9px;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 0;
+    vertical-align: -3px;
+    border-color: #3c465a;
+}
+.infor-like,.infor-review,.infor-share{
+    background: #fafafa;
+    padding: 6px 18px;
+}
+.infor-review .text,.infor-review .text textarea{
+  width: 100%;
+}
+.like-per,.share-per{
+    padding-left: 16px;   
+}
+.infor{
+    position: relative;
+    display: none;
+    background: #fff;
+}
+.infor .rack-like,.rack-review,.rack-share{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -16px;
+    border: 8px solid #fafafa;
+    border-color: transparent transparent #fafafa transparent;
+}
+.rack-like{
+    left: 39px;
+}
+.rack-review{
+    left: 151px;
+}
+.rack-share{
+    left: 271px;
+}
+.reviews{
+    display: block;
+    line-height: 22px;
+    text-align: left;
+}
+.reviews .review-name{
+    color: #3c465a;
+    padding-right: 6px;
+}
+.reviews em{
+    color: #000;
+    padding-left: 6px;
+    display: inline;
+}
+.text textarea{
+    resize: none;
+    border: 1px solid #e2e2e2;
+    outline: none;
+    padding-left: 9px;
+    padding-top: 3px;
+}
+.more{
+    display: block;;
+    text-align: center;
+}
+.more button{
+    background: none;
+}
+.nickimg img,.nickImg{
+      border-radius: 50%;
+      -moz-border-radius: 50%; /* Firefox */
+  -webkit-border-radius: 50%; /
+}
+.wrap{
+  border-bottom: 1px solid #ddd;
+  border-top:1px solid #ddd;
+}
+.text{position: relative;}
+.text button{
+  right: 0;
+    padding: 6px 20px;
+    border: 1px solid #ddd;
+}
+.text em{    width: 100%;
+    text-align: right;    padding-left: 9px}
+</style>
+<body>
+    <div class="box my1-box">
+        <!-- 头部 -->
+        <header class="my1-head">
+            <div class="my1-top">
+                <div class="top-content" style="margin-top: 0;">
+                    <div class="nickimg"><img src="../images/advice_btn_call.png" id='tx'></div>
+                    <div class="nickname"><h4 id='nick'>远航</h4></div>
+                </div> 
+            </div>
+        </header>
+       <div class="speak" id="list">
+        <!-- 1 -->
+          <div class="speak_inform">
+              <div class="weui-cell" style="padding:10px 15px 1px;">
+                  <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                      <img class="nickImg" src="../images/my_ic_informm.png" style="width: 30px;display: block">
+                  </div>
+                  <!-- 昵称 -->
+                  <div class="weui-cell__bd">
+                      <p style="font-size:14px;">远航</p>
+                      <p style="font-size: 12px;">12:00</p>
+                  </div>
+              </div>
+              <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+              <!-- 点赞评论分享 -->
+              <div class="wrap">
+                    <div class="key">
+                        <p>
+                            <a href="javascript:;" class="item item-like">
+                                <i class="ui-icon like"></i><i class="ui-font">赞</i>(<i class="ui-num">4</i>)
+                            </a>
+                        </p>
+                        <p>
+                            <span class="item-line"></span>
+                            <a href="javascript:;" class="item item-review">
+                                <i class="ui-icon review"></i><i class="ui-font">评价</i>(<i class="ui-num">2</i>)
+                            </a>
+                        </p>
+                        <p>
+                            <span class="item-line"></span>
+                            <a href="javascript:;" class="item item-share">
+                                <i class="ui-icon share"></i><i class="ui-font">分享</i>(<i class="ui-num">3</i>)
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <div class="infor one">
+                        <p class="rack-like"></p>
+                        <p class="infor-like">
+                            <em class="like-per">周会珍，骆书琴，梁东彬，苏华朋</em>
+                        </p>
+                    </div>
+                    <div class="infor two">
+                        <p class="rack-review"></p>
+                        <p class="infor-review">
+                            <a class="reviews">
+                                <i class="review-name">周惠珍</i>:<em class="review-text">专业安装，一丝不苟精神值得我们大家学习。</em>
+                            </a>
+                            <a class="reviews">
+                                <i class="review-name">梁东彬</i>:<em class="review-text">安装师傅辛苦了。</em>
+                            </a>
+                            <!-- <span class="text"><textarea placeholder="评论!" class="view"></textarea><em><button>发送</button></em></span> -->
+                        </p>
+                    </div>
+                    <div class="infor three">
+                        <p class="rack-share"></p>
+                        <p class="infor-share">
+                            <em class="share-per">梁东彬，苏华朋，骆书琴</em>
+                        </p>
+                    </div>
+                </div>
+          </div> 
+          <!-- 2 -->
+      </div>
+       
+    </div>
+
+    <script type="text/javascript">
+   
+    $(function (){
+
+        $.post("http://ect.gdswww.com/index.php/App/Index/friends_circle_list",{
+            token:"896f9006af1b27d77ee6fca66b621196",
+        },function(data){
+          console.log(data);
+          var html='';var nick='啊啊';var tx='';
+          
+          $.each(data.data.list,function (k,v){
+            var len=$(".reviews").length;
+           
+            // $.each(v.pl,function(k,s){
+            //   console.log(s.info);
+            // })
+            
+            //html+='<p class="rack-share">'+v.name+'</p>';
+            //console.log(v);
+            html+='<div class="speak_inform"><div class="weui-cell" style="padding:10px 15px 1px;"><div class="weui-cell__hd" style="position: relative;margin-right: 10px;"><img class="nickImg" src="'+v.user_img+'" style="width: 30px;display: block"></div><div class="weui-cell__bd"><p style="font-size:14px;">'+v.nick+'</p><p style="font-size: 12px;">'+v.time+'</p></div></div><p class="weui-media-box__desc">'+v.content+'</p><div class="wrap"><div class="key"><p><a href="javascript:;" class="item item-like" onclick="fun('+v.id+',this)">';
+           if(v.zan == '1'){
+            html+='<i class="ui-icon like active"></i>';
+           }else{
+            html+='<i class="ui-icon like"></i>';
+           }
+            
+            html+='<i class="ui-font">赞</i>(<i class="ui-num">8</i>)</a></p><p><span class="item-line"></span><a href="javascript:;" class="item item-review" onclick="addtack('+v.id+',this)"><i class="ui-icon review"></i><i class="ui-font">评价</i>(<i class="ui-num">'+len+'</i>)</a></p><p><span class="item-line"></span><a href="javascript:;" class="item item-share"><i class="ui-icon share"></i><i class="ui-font">分享</i>(<i class="ui-num">3</i>)</a></p></div><div class="infor one"><p class="rack-like"></p><p class="infor-like">';
+            $.each(v.pl,function(k,s){
+                html+='<em class="like-per">'+s.pid+'</em>';
+              })
+            html+='</p></div><div class="infor two"><p class="rack-review"></p><p class="infor-review content">';
+              $.each(v.pl,function(k,s){
+                  html+='<a class="reviews"><i class="review-name">'+s.nick+'</i>:<em class="review-text">'+s.info+'</em></a>'
+              })
+              html+='<span class="text"><textarea placeholder="评论!" rel="'+v.id+'" class="view"></textarea><em><button class="send">发送</button></em></span></p></div><div class="infor three"><p class="rack-share"></p><p class="infor-share">';
+              $.each(v.pl,function(k,s){
+                html+='<em class="share-per">'+s.pid+'</em>'
+              })
+              html+='</p></div></div></div>'
+            
+            nick=v.nick;tx=v.user_img;
+           })
+           document.getElementById("list").innerHTML = html;
+           $("#tx").attr('src',tx);$("#nick").text(nick);
+        })
+});
+      //点赞
+
+      function fun(id,obj){
+          
+          var num=parseInt($(obj).find(".ui-num").text());
+
+              //console.log(num);
+          if($(obj).find(".ui-icon.like").hasClass('active')){
+            num--;
+            $(obj).find(".ui-icon.like").removeClass("active")
+          }else{
+            num++;
+            $(obj).find(".ui-icon.like").addClass("active")
+          }
+          $(obj).find(".ui-num").text(num);
+          $(obj).parents(".key").siblings(".two,.three").hide(); 
+          //alert(1);
+          $(obj).parents(".key").siblings(".one").show();
+      };
+      //评论
+        function addtack(id,obj){
+          var count=parseInt($(obj).parents(".wrap").find(".item-review").children(".ui-num").text());
+         //console.log(count);
+          $(obj).parents(".key").siblings(".one,.three").hide();  
+          $(obj).parents(".key").siblings(".two").show();
+      }
+      $(document).on('click', '.text em', function(){
+            var counts=$(".view").val();
+            var id=$(".view").attr('rel');
+            var num=$(".item-review .ui-num").text();
+            var len=$(".review-name").length;
+            $(".item-review .ui-num").text(len)
+            console.log(len)
+            //alert(id)
+            $.post("http://ect.gdswww.com/index.php/App/Index/add_talk",{
+                token:"896f9006af1b27d77ee6fca66b621196",
+                id:id,
+                info:counts
+            },function(d){
+              if(d.status == 1){
+                  alert('评论成功');
+                  location.reload();
+              }else{
+                  alert('评论失败');
+              }
+          });
+                
+        });
+        //分享
+        $(document).on('click', '.item-share', function() {
+            var sum=parseInt($(this).find(".ui-num").text());
+             if($(".ui-icon.share").hasClass('active')){
+                sum--;
+                $(".ui-icon.share").removeClass('active')
+              }else{
+                sum++;
+                $(".ui-icon.share").addClass('active')
+              }
+              $(this).find(".ui-num").text(sum);
+              $(this).parents(".key").siblings(".one,.two").hide(); 
+              $(this).parents(".key").siblings(".three").show();
+              //$(this).parents(".key").siblings(".three").find(".infor-share .share-per").text("usename");
+        });
+   //回复
+   $(document).on('click', '.item-share', function() {
+
+   })
+    
+    </script>
+ </body>
+</html>

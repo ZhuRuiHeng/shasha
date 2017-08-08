@@ -13,7 +13,7 @@ xmlhttp.onreadystatechange=function(){
         var informArr="";
         var s = JSON.parse(xmlhttp.responseText);
         var data = s.data;
-       // console.log(data);
+        //console.log(data);
 		for(var i=0;i<data.length;i++){
     		//console.log(data[i].dityimg)
     		var num=i+1;
@@ -26,10 +26,7 @@ xmlhttp.onreadystatechange=function(){
 		document.getElementById("hotimg").innerHTML=informArr;
     }
 }
-//http://192.168.1.11:8080/salsa/commdity/getMore.do
+//console.log(apiRoot+"/commdity/getMore.do?token="+token);
 xmlhttp.open("GET",apiRoot+"/commdity/getMore.do?token="+token,true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send();
-function shijian(obj,id){
-	alert(id);
-}

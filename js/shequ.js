@@ -14,7 +14,7 @@ xmlhttp.onreadystatechange=function(){
         var informArr="";
         var s = JSON.parse(xmlhttp.responseText);
         var data = s.data;
-        console.log(data);
+        //console.log(data);
             for(var i=0;i<data.length;i++){ 
                 var chtml = '<li>'
                                 +'<a href="fenxiang.html?id='+data[i].id+'">'

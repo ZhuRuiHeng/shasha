@@ -14,6 +14,7 @@
 	        var dingdan   = "";
 	        var dingdanList = "";
 	       	var s = JSON.parse(xmlhttp.responseText);
+	       	console.log(data);
 	        var data = s.data.addressid;
 	        //console.log(xmlhttp.responseText+00000);
 	        console.log(data);

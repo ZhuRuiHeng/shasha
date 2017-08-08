@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>上传资料</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/iconfont.css">
+</head>
+<style>
+.notice{
+    color:red;
+    padding: 8px;
+}
+p{    
+    background: #fff;
+}
+.mui-content-padded,.mui-card{
+    margin:10px 0;
+}
+.mui-content-padded p{
+    padding: 10px;
+    font-size:12px;
+}
+.mui-table-view-cell.mui-active {
+    background-color: #fff;
+}
+.mui-card{
+    box-shadow:none;
+    border-radius:0;
+}
+.mui-card,.mui-card .mui-table-view{
+    background-color: #efeff4;
+}
+.mui-card .mui-table-view-cell{
+    margin: 10px 0;
+}
+.mui-card .mui-table-view .mui-table-view-cell:first-child, .mui-card .mui-table-view .mui-table-view-divider:first-child,
+.mui-card .mui-table-view,.mui-card .mui-table-view .mui-table-view-cell:last-child, .mui-card .mui-table-view .mui-table-view-divider:last-child{
+    border-radius: 0;
+}
+.mui-table-view-cell>a:not(.mui-btn),.mui-table-view-cell.mui-collapses{
+    background: #fff;
+}
+.mui-table-view-cell:after{
+    content:none;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell{
+    padding: 0;
+}
+button.xiayibu{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    font-size: 15px;
+    background: #ffda42;
+    border: 1px solid #ffda42;
+    font-weight: normal;
+    padding: 10px 10px;
+    border-radius: 26px;
+}
+.iconfont{font-size: 64px;color: grey;}
+.my{margin-top: 2px;}
+.my .mui-table-view-cell p{font-size: 12px;margin-top: 10px;color: #000000;}
+.btn{width: 90%;margin: auto;}
+.btn button{padding: 6px;margin-top: 50px;background: #FF5252;color: white;border: none;}
+.sr{padding: 2px 0px 0px 15px;height: 44px;}
+.sr input{width: 65%;padding: 0;}
+.mui-navigate-right.right-none:after{content: none;}
+.mui-checkbox input[type=checkbox]:checked:before {color:#FF5252;}
+.mui-table-view-cell.mui-collapse .my .mui-table-view .mui-table-view-cell:after{
+    content: none;
+}
+</style>
+<body style="background-color: #f3f3f3;"> 
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">上传资料</h1>
+	</header>
+	<div class="mui-content">
+	    <div class="mui-content-padded">
+            <p>
+                <span class="notice">*</span>提供以下任意三个有效文件复印件以作为身份和地址认证
+            </p>
+        </div>
+        <!-- 折叠面板 -->
+        <div class="mui-card">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-collapse">
+                    <a class="mui-navigate-right" href="javascript:;">图片轮播</a>
+                    <div class="my">   
+                        <ul class="mui-table-view mui-grid-view" style="background: #fff;">
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="my_taobao_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">我的淘宝截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="person_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">个人资料截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="huiyuan_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">会员中心截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3" id="xinzeng">
+                                <i id="addnew" data-id="addnew" class="mui-icon iconfont addnew" style="width: 64px;height: 64px;">+</i>
+                                <p class="mui-ellipsis">新增</p>
+                            </li>
+                         </ul>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell mui-collapse">
+                    <a class="mui-navigate-right" href="javascript:;">图片轮播</a>
+                    <div class="my">   
+                        <ul class="mui-table-view mui-grid-view" style="background: #fff;">
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="my_taobao_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">我的淘宝截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="person_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">个人资料截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3">
+                                <i data-id="huiyuan_pic" class="mui-icon iconfont icon-shangchuantupian"></i>
+                                <p class="mui-ellipsis">会员中心截图</p>
+                            </li>
+                            <li class="mui-table-view-cell mui-col-xs-3" id="xinzeng">
+                                <i id="addnew" data-id="addnew" class="mui-icon iconfont addnew" style="width: 64px;height: 64px;">+</i>
+                                <p class="mui-ellipsis">新增</p>
+                            </li>
+                         </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 按钮-->
+        <div style="margin: 30px 0;">
+            <button class="xiayibu">下一步</button>
+        </div>
+	</div>
+    
+</body> 
+<script src="../js/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/public.js"></script>
+<script src="../js/up.js"></script>
+</body>
+</html> 

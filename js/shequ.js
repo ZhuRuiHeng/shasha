@@ -39,7 +39,7 @@ xmlhttp.onreadystatechange=function(){
             };
     }
 };
-//console.log(apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1");
+console.log(apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1");
 //?id="+id
 xmlhttp.open("GET",apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");

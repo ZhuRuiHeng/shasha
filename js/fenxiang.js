@@ -81,9 +81,39 @@ var getParam = function () {
 		        }else{
 		        	document.getElementById("maijia").style.display="none";
 		        };
+		        //收藏
+		        //http://192.168.1.11:8080/salsa/commdity/clickByCollec.do
+		        dianzan_num.addEventListener('tap',function(){
+		        	 $.ajax({
+					        	type:"post",
+					        	url : apiRoot+"/salsa/commdity/clickByCollec.do",
+					        	data : {
+					        		 	 	   id : id,
+					        		        token : token,
+					        	       ditydemand : data.userDityMsg.ditydemand
+					        		},
+					        	dataType : 'json',
+					        	success : function(data){
+					        		//plus.nativeUI.closeWaiting();
+					        		console.log("收藏"+JSON.stringify(data));
+					        		if(data.info=="增加评论成功"){
+					        			//plus.nativeUI.toast('已提交后台审核');
+					        			mui.toast("评论成功，感谢评论！");
+					        			//location.reload();
+					        		}else{ 
+					        			//plus.nativeUI.toast('提交失败');
+					        			mui.toast("评论失败");
+					        		}
+					        	},
+					        	error : function(e){
+					        		//plus.nativeUI.closeWaiting();
+					        		//plus.nativeUI.toast('提交失败');
+					        		console.log(JSON.stringify(e));
+					        	}
+					        });
+		        })
 		        //回复
-		       
-		        console.log(commment);	
+		       console.log(commment);	
 		        //  var newDate = new Date();
 				// newDate.setTime(1501324383000 * 1000);
 				// console.log(newDate.toLocaleDateString());

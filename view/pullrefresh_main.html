@@ -141,6 +141,27 @@
 			}
 			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
 		});
+
+
+		//交互js
+		function setupWebViewJavascriptBridge(callback) {
+		    if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+		    if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+		    window.WVJBCallbacks = [callback];
+		    var WVJBIframe = document.createElement('iframe');
+		    WVJBIframe.className = 'new';
+		    WVJBIframe.style.display = 'none';
+		    WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+		    document.documentElement.appendChild(WVJBIframe);
+		    setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+		}
+		function add(obj,id) {
+		    setupWebViewJavascriptBridge(function(bridge) {
+		        bridge.callHandler('getBlogNam', {'blogURL': id}, function(response) {
+
+		        })
+		    })
+		}
 	</script>
 
 </html>

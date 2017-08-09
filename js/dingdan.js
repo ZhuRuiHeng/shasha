@@ -1,5 +1,4 @@
 	var token = "b49ead51-240b-4c70-9044-ba266afd0799";
-	console.log(token);
 	var xmlhttp;
 	if (window.XMLHttpRequest){
 		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -14,7 +13,7 @@
 	        var dingdan   = "";
 	        var dingdanList = "";
 	       	var s = JSON.parse(xmlhttp.responseText);
-	       	console.log(data);
+	       	console.log(s);
 	        var data = s.data.addressid;
 	        //console.log(xmlhttp.responseText+00000);
 	        console.log(data);
@@ -105,8 +104,8 @@
 	            document.getElementById("item1").innerHTML= dingdanList;
 	   }
 	};
-	//console.log(apiRoot+"/order/oderAll.do");
-	xmlhttp.open("GET",apiRoot+"/order/oderAll.do?token="+token,true);
+	console.log(apiRoot+"/order/oderAll.do?statusid="+01+"&token="+token);
+	xmlhttp.open("GET",apiRoot+"/order/oderAll.do?statusid="+01+"&token="+token,true);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send();
 

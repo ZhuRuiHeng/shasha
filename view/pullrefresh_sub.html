@@ -305,7 +305,10 @@
 					mui('#pullrefresh').pullRefresh().pullupLoading();
 				});
 			}
-
+			//页面跳转事件委托
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
 			//交互js
 			function setupWebViewJavascriptBridge(callback) {
 			    if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }

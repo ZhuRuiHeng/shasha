@@ -13,7 +13,7 @@ xmlhttp.onreadystatechange=function(){
         var informArr="";
         var s = JSON.parse(xmlhttp.responseText);
         var data = s.data;
-        //console.log(data);
+        console.log(data);
 		for(var i=0;i<data.length;i++){
     		//console.log(data[i].dityimg)
     		var num=i+1;

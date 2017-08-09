@@ -71,3 +71,16 @@ ul li .mui-media-body .yonghu_name{font-size: 16px;color:#000}
 .mj_xiangqing .mui-table-view-cell p.dianzan i{background: url(../images/xin.png) no-repeat;background-size: contain;}
 .mj_xiangqing .mui-table-view-cell p.pinglun.active i{background: url(../images/pingluna.png) no-repeat;background-size: contain;}
 .mj_xiangqing .mui-table-view-cell p.dianzan.active i{background: url(../images/xina.png) no-repeat;background-size: contain;}
+.mui-bar{
+    height: 64px;
+}
+.mui-bar .mui-icon{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.mui-title{
+    line-height: 64px;
+}
+.mui-bar-nav~.mui-content{
+    padding-top:64px;
+}

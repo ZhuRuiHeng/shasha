@@ -22,6 +22,7 @@ var getParam = function () {
 		    	var informArr   = "";
 		        var s           = JSON.parse(xmlhttp.responseText);
 		        var data        = s.data;
+		        console.log(data);
 		        var releasetime = data.userDityMsg.releasetime;
 				var newDate1    = new Date();
 				    newDate1.setTime(releasetime);
@@ -84,13 +85,14 @@ var getParam = function () {
 		        //收藏
 		        //http://192.168.1.11:8080/salsa/commdity/clickByCollec.do
 		        dianzan_num.addEventListener('tap',function(){
+		        	console.log('id:'+id+'token:'+token+'ditydemand:'+2);
 		        	 $.ajax({
 					        	type:"post",
-					        	url : apiRoot+"/salsa/commdity/clickByCollec.do",
+					        	url : apiRoot+"/commdity/clickByCollec.do",
 					        	data : {
 					        		 	 	   id : id,
 					        		        token : token,
-					        	       ditydemand : data.userDityMsg.ditydemand
+					        	       ditydemand : 2
 					        		},
 					        	dataType : 'json',
 					        	success : function(data){

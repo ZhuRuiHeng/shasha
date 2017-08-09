@@ -44,3 +44,23 @@ console.log(apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266af
 xmlhttp.open("GET",apiRoot+"/posts/getpostsAll.do?token=b49ead51-240b-4c70-9044-ba266afd0799&postsid=1",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send();
+
+
+//交互js
+function setupWebViewJavascriptBridge(callback) {
+    if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+    if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+    window.WVJBCallbacks = [callback];
+    var WVJBIframe = document.createElement('iframe');
+    WVJBIframe.style.display = 'none';
+    WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+    document.documentElement.appendChild(WVJBIframe);
+    setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+}
+function add(obj,id) {
+    setupWebViewJavascriptBridge(function(bridge) {
+        bridge.callHandler('getBlogNam', {'blogURL': id}, function(response) {
+
+        })
+    })
+}

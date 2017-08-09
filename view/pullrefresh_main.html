@@ -8,6 +8,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/new.css"/>
 	</head>
 	<style type="text/css">
 	*{ 
@@ -82,7 +83,7 @@
 	.mui-pull-right.kuandu{
 		width: 45px;
 	    padding: 0!important;
-	    margin: 0!important;
+	    margin: 20px 0 0 0!important;
 	    height: 45px;
 	    line-height: 45px;
 	    vertical-align: middle;
@@ -102,30 +103,21 @@
 		width: 32px;
 	    vertical-align: middle;
 	    display: inline-block;
-	}	
+	}
 	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<h1 id="title" class="mui-title">下拉刷新和上拉加载更多</h1>
+			<h1 id="title" class="mui-title">社区</h1>
+			<span class="mui-icon mui-pull-right kuandu" onclick="add(this,1)"><img id="tianjia" src="../images/fabu.png"></span>
 		</header>
 		<div class="mui-content">
-			<!-- 商品列表 --> 
-		    <div class="twoRankedBox"> 
-		        <ul class="BoxLeft"> 
-		 
-		        </ul> 
-		 
-		        <ul class="BoxRight"> 
-		 
-		        </ul> 
-		    </div> 
+			
 		</div>
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/public.js"></script>
-	<script src="../js/shequ.js"></script>
 	<script type="text/javascript">
 		//启用双击监听
 		mui.init({
@@ -136,7 +128,7 @@
 				url:'pullrefresh_sub.html',
 				id:'pullrefresh_sub.html',
 				styles:{
-					top: '45px',
+					top: '64px',
 					bottom: '0px', 
 				}
 			}] 

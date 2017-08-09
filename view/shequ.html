@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>社区</title>
     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/new.css"/>
 </head>
 <style type="text/css">
 	*{ 
@@ -79,7 +80,7 @@
 .mui-pull-right.kuandu{
 	width: 45px;
     padding: 0!important;
-    margin: 0!important;
+    margin: 20px 0 0 0!important;
     height: 45px;
     line-height: 45px;
     vertical-align: middle;
@@ -96,7 +97,7 @@
     margin: 0 2px 0 0;
 }
 #tianjia{
-	width: 32px;
+	width: 30px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -104,7 +105,7 @@
 <body style="background-color: #f3f3f3;"> 
 	<header class="mui-bar mui-bar-nav">
 	    <h1 class="mui-title">社区</h1>
-	    <span class="mui-icon mui-pull-right kuandu"><img id="tianjia" src="../images/fabu.png"/></span>
+	    <span class="mui-icon mui-pull-right kuandu" onclick="add(this,1)"><img id="tianjia" src="../images/fabu.png"/></span>
 	</header>
 	<div class="mui-content">
 	    <!-- 商品列表 --> 

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		 <title>订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/new.css"/>
+	</head>
+	<style type="text/css">
+	*{ 
+	    padding:0px; 
+	    margin:0px; 
+	    list-style: none; 
+	    font-style:normal; 
+	    font-family: arial; 
+	    font-family: Microsoft YaHei,arial; 
+	} 
+	.twoRankedBox ul li a{
+	    display: block;
+	}
+	.twoRankedBox{ 
+	    margin:6px 8px; 
+	    overflow: hidden; 
+	    padding-bottom:25px; 
+	} 
+	.twoRankedBox ul{ 
+	    width:49%; 
+	    float: left; 
+	} 
+	.twoRankedBox ul:last-child{ 
+	    margin-left:2%; 
+	} 
+	.twoRankedBox ul li{ 
+	    padding:5px; 
+	    margin-bottom:6px; 
+	    padding-bottom:8px; 
+	    background-color: #FFFFFF; 
+	} 
+	.twoRankedBox ul li p:first-child{ 
+	    padding-top:0px; 
+	} 
+	.twoRankedBox ul li p{ 
+	    padding-top:4px; 
+	} 
+	.product_picture img{ 
+	    display: block; 
+	    width:100%;
+	    border-radius: 8px; 
+	} 
+	.product_np{ 
+	    overflow: hidden; 
+	    line-height:20px; 
+	} 
+	.product_np span{ 
+	    display: block; 
+	    overflow:hidden; 
+	    text-overflow:ellipsis; 
+	    white-space:nowrap; 
+	} 
+	.product_np span:first-child{ 
+	    font-size:0.9em; 
+	    color:#8f8f94; 
+	    width:50%; 
+	    float: left; 
+	} 
+	.product_np span:last-child{ 
+	    font-size:0.8em; 
+	    color:#000; 
+	    background: url(../images/bg.png) no-repeat;
+	    background-size: cover;
+	    float: right; 
+	    width:50%; 
+	    text-align: center; 
+	} 
+	.product_ie{ 
+	    font-size:0.8em; 
+	    color:#777; 
+	} 
+	.mui-pull-right.kuandu{
+		width: 45px;
+	    padding: 0!important;
+	    margin: 20px 0 0 0!important;
+	    height: 45px;
+	    line-height: 45px;
+	    vertical-align: middle;
+	    text-align: center;
+	}
+	.product_caozuo span{
+		display:inline-block ;
+		width: 50%;
+		vertical-align: middle;
+	}
+	.product_caozuo span img{
+		width: 16px;
+	    vertical-align: middle;
+	    margin: 0 2px 0 0;
+	}
+	#tianjia{
+		width: 32px;
+	    vertical-align: middle;
+	    display: inline-block;
+	}
+	</style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">订单</h1>
+		</header>
+		<div class="mui-content">
+			
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/public.js"></script>
+	<script type="text/javascript">
+		//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+			subpages:[{ 
+				url:'dingdanlist.html',
+				id:'dingdanlist.html',
+				styles:{
+					top: '64px',
+					bottom: '0px', 
+				}
+			}] 
+		});
+	
+		var contentWebview = null;
+		document.querySelector('header').addEventListener('doubletap',function () {
+			if(contentWebview==null){
+				contentWebview = plus.webview.currentWebview().children()[0];
+			}
+			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+		});
+
+
+		//交互js
+		function setupWebViewJavascriptBridge(callback) {
+		    if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+		    if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+		    window.WVJBCallbacks = [callback];
+		    var WVJBIframe = document.createElement('iframe');
+		    WVJBIframe.className = 'new';
+		    WVJBIframe.style.display = 'none';
+		    WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+		    document.documentElement.appendChild(WVJBIframe);
+		    setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+		}
+		function all(obj,id) {
+		    setupWebViewJavascriptBridge(function(bridge) {
+		        bridge.callHandler('getBlogAll', {'blogURL': id}, function(response) {
+
+		        })
+		    })
+		}
+	</script>
+
+</html>

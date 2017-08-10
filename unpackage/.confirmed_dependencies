@@ -1,0 +1,17 @@
+{
+  "view/hot.html": {
+    "href": "view/hot.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/swiper.min.css",
+      "css/choumei.min.css",
+      "js/jquery-1.12.2.js",
+      "js/swiper.min.js",
+      "js/choumei.min.js",
+      "js/public.js",
+      "js/hot.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

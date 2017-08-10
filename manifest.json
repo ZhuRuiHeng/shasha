@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "view/hot.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -188,6 +188,108 @@
 					"xxhdpi": ""
 				}
 			}
+		}
+	},
+	"dependencies":{
+		"pages": {
+			"view/hot.html": {
+				"href": "view/hot.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/swiper.min.css",
+					"css/choumei.min.css",
+					"js/jquery-1.12.2.js",
+					"js/swiper.min.js",
+					"js/choumei.min.js",
+					"js/public.js",
+					"js/hot.js"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"images/pingluna.png",
+				"css/feedback.css",
+				"js/fenxiang.js",
+				"images/dingwei@3x.png",
+				"images/star2.png",
+				"images/jiadizhi@3x.png",
+				"view/dingdanall.html",
+				"fonts/iconfont.woff",
+				"view/up.html",
+				"view/pengyouquan.html",
+				"images/xin@3x.png",
+				"images/sc@3x.png",
+				"css/iconfont.css",
+				"LICENSE.md",
+				"fonts/iconfont.ttf",
+				"js/mui.js",
+				"images/ppinglun.png",
+				"images/shouhuodizhi@3x.png",
+				"view/fenxiang.html",
+				"README.md",
+				"images/dingwewi1@3x.png",
+				"images/tupian@3x.png",
+				"css/new.css",
+				"images/fabu.png",
+				"js/dingdan.js",
+				"images/xin.png",
+				"view/pullrefresh_main.html",
+				"images/up.png",
+				"images/pxin.png",
+				"images/xiangyao@3x.png",
+				"css/dingdan.css",
+				"css/mui.css",
+				"js/swiper.js",
+				"images/star4.png",
+				"images/jian1@3x.png",
+				"index.html",
+				"images/jia@3x.png",
+				"images/kuozhan@3x.png",
+				"images/zhiyou@3x.png",
+				"view/dingdanlist.html",
+				"js/shequ.js",
+				"images/xina.png",
+				"images/bg.png",
+				"images/ppinglun@3x.png",
+				"images/xial@3x.png",
+				"images/star5.png",
+				"images/pxinj@3x.png",
+				"images/beishoucang@3x.png",
+				"images/jia1@3x.png",
+				"view/shequ.html",
+				"images/shouhuosizhi@3x.png",
+				"images/gengduo@3x.png",
+				"css/new_swiper.css",
+				"images/pinglun.png",
+				"js/mui.min.js",
+				"images/yanse@3x.png",
+				"images/jian@3x.png",
+				"images/star0.png",
+				"images/star3.png",
+				"images/组-9@3x.png",
+				"view/dingdan_inform.html",
+				"images/ccun@3x.png",
+				"images/dingwei.png",
+				"view/pullrefresh_sub.html",
+				"images/yuyin@3x.png",
+				"view/dingdan.html",
+				"images/pinpai@3x.png",
+				"images/biaoqing@3x.png",
+				"images/ttiaoma@3x.png",
+				"images/shequ1@3x.png",
+				"images/pinglun@3x.png",
+				"js/up.js",
+				"images/fabu@3x.png",
+				"images/star1.png",
+				"fonts/iconfont.eot",
+				"images/baoyou@3x.png",
+				"images/shequ@3x.png",
+				"images/bianji@3x.png",
+				"images/shezhi@3x.png"
+			]
 		}
 	}
 }

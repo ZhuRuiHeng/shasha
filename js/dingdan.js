@@ -1,4 +1,4 @@
-	var token = "b49ead51-240b-4c70-9044-ba266afd0799";
+	var token = '716e029a-4449-4fce-8d3e-85d357685113';
 	var xmlhttp;
 	if (window.XMLHttpRequest){
 		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -13,9 +13,8 @@
 	        var dingdan   = "";
 	        var dingdanList = "";
 	       	var s = JSON.parse(xmlhttp.responseText);
-	       	console.log(s);
-	        var data = s.data.addressid;
-	        //console.log(xmlhttp.responseText+00000);
+	       	//console.log(s);
+	        var data = s.data;
 	        console.log(data);
 	            for(var i=0;i<data.length;i++){ 
 	            	//console.log(data[i].statusid);
@@ -104,8 +103,9 @@
 	            document.getElementById("item1").innerHTML= dingdanList;
 	   }
 	};
-	console.log(apiRoot+"/order/oderAll.do?statusid="+01+"&token="+token);
-	xmlhttp.open("GET",apiRoot+"/order/oderAll.do?statusid="+01+"&token="+token,true);
+	
+	//console.log(apiRoot+"/order/oderAll.do?statusid="+0+','+1+','+2+','+3+','+4+"&token="+token);
+	xmlhttp.open("GET",apiRoot+"/order/oderAll.do?statusid="+0+','+1+','+2+','+3+','+4+"&token="+token,true);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send();
 
@@ -335,8 +335,16 @@
 		  	}
 		  	starIndex = index;
 	  	});
-//关闭退货退款弹窗
+		//关闭退货退款弹窗
 		function tuikuan(){
 			alert(1);
 			document.getElementsByClassName("tuikuan")[0].style.display = "none";
 		}
+
+
+		//页面跳转事件委托
+		mui('#segmentedControl').on('tap','a',function(){
+		    window.top.location.href=this.href;
+		    var statusid = this.getAttribute("data");
+		    console.log(statusid);
+		});

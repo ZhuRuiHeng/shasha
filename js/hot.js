@@ -1,5 +1,5 @@
 //热门推荐------------------------------------------------------
-plus.nativeUI.showWaiting('请稍等...');
+//plus.nativeUI.showWaiting('请稍等...');
 var xmlhttp;
 if (window.XMLHttpRequest){
 	// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -25,7 +25,7 @@ xmlhttp.onreadystatechange=function(){
 						  "</div>";
 			informArr+=informStr;
 		};
-        plus.nativeUI.closeWaiting();
+        //plus.nativeUI.closeWaiting();
 		document.getElementById("hotimg").innerHTML=informArr;
     }
 }

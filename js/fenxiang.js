@@ -22,7 +22,6 @@ var getParam = function () {
 		    	var informArr   = "";
 		        var s           = JSON.parse(xmlhttp.responseText);
 		        var data        = s.data;
-		        console.log(data);
 		        var releasetime = data.userDityMsg.releasetime;
 				var newDate1    = new Date();
 				    newDate1.setTime(releasetime);
@@ -46,6 +45,8 @@ var getParam = function () {
 				var samePerson  = data.userDityMsg.specification;
 				var lunboimg    = data.userDityMsg.dityimg;
 				var commment    = data.commentMsg.commment;
+				var is_colleuser= data.commentMsg.collePosts.is_collePosts;
+				console.log(is_colleuser);
 				var pingjiaList = "";
 				var pingjiaAll = "";
 				var lunboStr="",lunboArr="",lunborol="",lunborols="";
@@ -84,6 +85,7 @@ var getParam = function () {
 		        };
 		        //收藏
 		        //http://192.168.1.11:8080/salsa/commdity/clickByCollec.do
+		        console.log(is_colleuser+222222);
 		        dianzan_num.addEventListener('tap',function(){
 		        	console.log('id:'+id+'token:'+token+'ditydemand:'+2);
 		        	 $.ajax({
@@ -92,11 +94,13 @@ var getParam = function () {
 					        	data : {
 					        		 	 	   id : id,
 					        		        token : token,
-					        	       ditydemand : 2
+					        	       ditydemand : 2,
+					        	     is_colleuser : is_colleuser
 					        		},
 					        	dataType : 'json',
 					        	success : function(data){
 					        		//plus.nativeUI.closeWaiting();
+					        		
 					        		console.log("收藏"+JSON.stringify(data));
 					        		if(data.info=="增加评论成功"){
 					        			//plus.nativeUI.toast('已提交后台审核');
@@ -298,3 +302,4 @@ function huifu(obj,pid,postsid,pcommid){
 	});
 	
 } 
+

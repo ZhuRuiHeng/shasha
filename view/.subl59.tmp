@@ -15,10 +15,10 @@
 		<link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
 	</head>
 	<body>
-		<!-- <header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom: 1px solid #ddd">
+		<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom: 1px solid #ddd">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">订单</h1>
-		</header> -->
+		</header>
 		<div class="mui-content">
 			<!--选项卡onclick=\"javascript:window.location.href='dingdan_inform.html?id="+data[i].id+"\">"-->
 		    <div style="padding:0px 15px;background:#fff;position:fixed;z-index:10;right:0;left:0;">
@@ -41,8 +41,8 @@
 				</div>
 			</div>
 			<!--内容-->
-			<div class="list_all" style="margin-top: 0px;">
-				<div id="item1" class="mui-control-content mui-active" style=" padding-top: 40px;">
+			<div class="list_all" style="margin-top: 54px;">
+				<div id="item1" class="mui-control-content mui-active">
 					<!--确认收货-->
 					<ul class="mui-table-view" url="dingdan_inform.html?id=">
 						<li class="mui-table-view-cell mui-media border_right">

@@ -44,105 +44,126 @@
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/public.js"></script>
 		<script>
-			mui.init({
-				pullRefresh: {
-					container: '#pullrefresh',
-					down: {
-						callback: pulldownRefresh
-					},
-					up: {
-						contentrefresh: '正在加载...',
-						callback: pullupRefresh
-					}
-				}
-			});
-
+			
+			var token = '716e029a-4449-4fce-8d3e-85d357685113';
 			////////////////////////
-				function pulldownRefresh() {
-						setTimeout(function() {
-							var id = "0,1,2,3,4";
-							//
-							//plus.nativeUI.showWaiting('信息获取中...');
-							$.ajax({
-								type:"get",
-								url : apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token,  
-								data : {
-									statusid : id,
-									token : token
-								},
-								dataType : 'json',
-								success : function(data){
-									//plus.nativeUI.closeWaiting();
-									console.log(apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token);
-									console.log(JSON.stringify(data));
-									var table = document.body.querySelector('.mui-table-view');
-									var cells = document.body.querySelectorAll('.mui-table-view-cell');
-									for (var i = cells.length, len = i + 3; i < len; i++) {
-										var li = document.createElement('li');
-										li.className = 'mui-table-view-cell';
-										li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-										//下拉刷新，新纪录插到最前面；
-										table.insertBefore(li, table.firstChild);
-									}
+				// function pulldownRefresh() {
+				// 		setTimeout(function() {
+				// 			var id = "0,1,2,3,4";
+				// 			//
+				// 			//plus.nativeUI.showWaiting('信息获取中...');
+				// 			$.ajax({
+				// 				type:"get",
+				// 				url : apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token,  
+				// 				data : {
+				// 					statusid : id,
+				// 					token : token
+				// 				},
+				// 				dataType : 'json',
+				// 				success : function(data){
+				// 					//plus.nativeUI.closeWaiting();
+				// 					console.log(apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token);
+				// 					//console.log(JSON.stringify(data));
+				// 					console.log(data.data)
+									 	
+				// 					var table = document.body.querySelector('.mui-table-view');
+				// 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				// 					for (var i = cells.length, len = i + 3; i < len; i++) {
+				// 						var li = document.createElement('li');
+				// 						li.className = 'mui-table-view-cell';
+				// 						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+				// 						//下拉刷新，新纪录插到最前面；
+				// 						table.insertBefore(li, table.firstChild);
+				// 					}
 
-									},
-									error : function(e){
-										//plus.nativeUI.closeWaiting();
-										console.log('111==='+JSON.stringify(e));  
-									}  
-								});
+				// 					},
+				// 					error : function(e){
+				// 						//plus.nativeUI.closeWaiting();
+				// 						console.log('111==='+JSON.stringify(e));  
+				// 					}  
+				// 				});
 
-							//
-							mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-						}, 1500);
-					}
-					var count = 0;
+				// 			//
+				// 			mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				// 		}, 1500);
+				// 	}
+				// 	var count = 0;
 
 
-					function pullupRefresh() {
-						setTimeout(function() {
-							var id = "0,1,2,3,4";
-							mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-							var table = document.body.querySelector('.mui-table-view');
-							var cells = document.body.querySelectorAll('.mui-table-view-cell');
-							//
-							//plus.nativeUI.showWaiting('信息获取中...');
-							$.ajax({
-								type:"get",
-								url : apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token,  
-								data : {
-									statusid : id,
-									token : token
-								},
-								dataType : 'json',
-								success : function(data){
-									//plus.nativeUI.closeWaiting();
-									console.log(apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token);
-									console.log(JSON.stringify(data));
-									var table = document.body.querySelector('.mui-table-view');
-									var cells = document.body.querySelectorAll('.mui-table-view-cell');
-									for (var i = cells.length, len = i + 3; i < len; i++) {
-										var li = document.createElement('li');
-										li.className = 'mui-table-view-cell';
-										li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-										//下拉刷新，新纪录插到最前面；
-										table.insertBefore(li, table.firstChild);
-									}
+				// 	function pullupRefresh() {
+				// 		setTimeout(function() {
+				// 			var id = "0,1,2,3,4";
+				// 			mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+				// 			var table = document.body.querySelector('.mui-table-view');
+				// 			var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				// 			//
+				// 			//plus.nativeUI.showWaiting('信息获取中...');
+				// 			$.ajax({
+				// 				type:"get",
+				// 				url : apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token,  
+				// 				data : {
+				// 					statusid : id,
+				// 					token : token
+				// 				},
+				// 				dataType : 'json',
+				// 				success : function(data){
+				// 					//plus.nativeUI.closeWaiting();
+				// 					console.log(apiRoot+"/order/oderAll.do?statusid="+id+"&token="+token);
+				// 					//console.log(JSON.stringify(data));
+				// 					console.log(data.data)
+				// 					var table = document.body.querySelector('.mui-table-view');
+				// 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				// 					for (var i = cells.length, len = i + 3; i < len; i++) {
+				// 						var li = document.createElement('li');
+				// 						li.className = 'mui-table-view-cell';
+				// 						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+				// 						//下拉刷新，新纪录插到最前面；
+				// 						table.insertBefore(li, table.firstChild);
+				// 					}
 
-								},
-								error : function(e){
-									plus.nativeUI.closeWaiting();
-									console.log('111==='+JSON.stringify(e));  
-								}  
-							});
+				// 				},
+				// 				error : function(e){
+				// 					plus.nativeUI.closeWaiting();
+				// 					console.log('111==='+JSON.stringify(e));  
+				// 				}  
+				// 			});
 
-							//
-							mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-						}, 1500);
-					}
+				// 			//
+				// 			mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				// 		}, 1500);
+				// 	}
 					/////////////////
+			var btn = document.getElementById("btn");
+			//监听点击事件
+			btn.addEventListener("tap",function () {
+			  console.log("tap event trigger");
+			});
+			//app推荐推荐
+
+			window.addEventListener('#segmentedControl a',function(event){
+				//选项卡点击事件
+				var btn = document.getElementById("btn");
+				//模拟首页点击
+				mui.trigger(defaultTab, 'tap');
+				var statusid = this.getAttribute("data");
+			    	console.log(statusid+1111);
+
+			});	
+
 			//document.addEventListener('plusready',function(){
 				mui('#segmentedControl').on('tap','a',function(){
+					mui.init({
+						pullRefresh: {
+							container: '#pullrefresh',
+							down: {
+								callback: pulldownRefresh
+							},
+							up: {
+								contentrefresh: '正在加载...',
+								callback: pullupRefresh
+							}
+						}
+					});
 				    var statusid = this.getAttribute("data");
 			    	console.log(statusid);
 			    	/**
@@ -152,7 +173,7 @@
 						setTimeout(function() {
 							
 							//
-							plus.nativeUI.showWaiting('信息获取中...');
+							//plus.nativeUI.showWaiting('信息获取中...');
 							$.ajax({
 								type:"get",
 								url : apiRoot+"/order/oderAll.do?statusid="+statusid+"&token="+token,  
@@ -162,9 +183,10 @@
 								},
 								dataType : 'json',
 								success : function(data){
-									plus.nativeUI.closeWaiting();
+									//plus.nativeUI.closeWaiting();
 									console.log(apiRoot+"/order/oderAll.do?statusid="+statusid+"&token="+token);
-									console.log(JSON.stringify(data));
+									//console.log(JSON.stringify(data));
+									console.log(data.data)
 									var table = document.body.querySelector('.mui-table-view');
 									var cells = document.body.querySelectorAll('.mui-table-view-cell');
 									for (var i = cells.length, len = i + 3; i < len; i++) {
@@ -196,7 +218,7 @@
 							var table = document.body.querySelector('.mui-table-view');
 							var cells = document.body.querySelectorAll('.mui-table-view-cell');
 							//
-							plus.nativeUI.showWaiting('信息获取中...');
+							//plus.nativeUI.showWaiting('信息获取中...');
 							$.ajax({
 								type:"get",
 								url : apiRoot+"/order/oderAll.do?statusid="+statusid+"&token="+token,  
@@ -206,9 +228,10 @@
 								},
 								dataType : 'json',
 								success : function(data){
-									plus.nativeUI.closeWaiting();
+									//plus.nativeUI.closeWaiting();
 									console.log(apiRoot+"/order/oderAll.do?statusid="+statusid+"&token="+token);
-									console.log(JSON.stringify(data));
+									//console.log(JSON.stringify(data));
+									console.log(data.data)
 									var table = document.body.querySelector('.mui-table-view');
 									var cells = document.body.querySelectorAll('.mui-table-view-cell');
 									for (var i = cells.length, len = i + 3; i < len; i++) {

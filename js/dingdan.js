@@ -344,7 +344,115 @@
 
 		//页面跳转事件委托
 		mui('#segmentedControl').on('tap','a',function(){
-		    window.top.location.href=this.href;
 		    var statusid = this.getAttribute("data");
 		    console.log(statusid);
+		    var xmlhttp;
+	if (window.XMLHttpRequest){
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();	
+	}
+	else{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+	        var dingdan   = "";
+	        var dingdanList = "";
+	       	var s = JSON.parse(xmlhttp.responseText);
+	       	//console.log(s);
+	        var data = s.data;
+	        console.log(data);
+	            for(var i=0;i<data.length;i++){ 
+	            	//console.log(data[i].statusid);
+	            	var dingdan="<ul class=\"mui-table-view\" onclick=\"javascript:window.location.href='dingdan_inform.html?id="+data[i].id+"\">"+
+								"<li class=\"mui-table-view-cell mui-media border_right\">"+
+									"<a href=\"javascript:;\">"+
+										"<img class=\"mui-media-object mui-pull-left\" src=\""+data[i].dityimg+"\">"+
+										"<div class=\"mui-media-body\">"+
+											"<p class=\"mui-ellipsis\">"+
+												"<span class=\"mui-pull-left mingcheng\">"+data[i].dityname+"</span><span class=\"mui-pull-right jiage\">￥"+data[i].dityprice+"</span>"+
+											"</p>"+
+											"<p class=\"mui-ellipsis\">"+
+												"<span class=\"mui-pull-right shuliang\">×"+data[i].purchase+"</span>"+
+											"</p>"+
+											"<p class=\"mui-ellipsis all_img\">"+
+												"<span>"+
+													"<i class=\"mui-icon\"><img style=\"width:18px;\" src=\"../images/baoyou@3x.png\"></i>"
+													if(data[i].directmail == 0){
+														dingdan+="<em>直邮</em>"
+													}else{
+														dingdan+="<em>直邮</em>"
+													}
+												dingdan+="</span>"+
+												"<span style=\"text-align: center;\">"+
+													"<i class=\"mui-icon\"><img src=\"../images/zhiyou@3x.png\"></i>"
+													if(data[i].freeshipping == 1){
+														dingdan+="<em>包邮</em>"
+													}else{
+														dingdan+="<em>不包邮</em>"
+													}
+												dingdan+="</span>"+
+												"<span style=\"text-align: right;\">"+
+													"<i class=\"mui-icon\"><img style=\"width:11px;\" src=\"../images/dingwei@3x.png\"></i>"+
+													"<em>"+data[i].position+"</em>"+
+												"</span>"+
+											"</p>"+
+											"<p class=\"mui-ellipsis all_img\">"+
+												"<span>"+
+													"<i class=\"mui-icon\"><img src=\"../images/ttiaoma@3x.png\"></i>"+
+													"<em>"+data[i].singlenum+"</em>"+
+												"</span>"+
+											"</p>"+
+											"<p class=\"mui-ellipsis\">"+
+												"<span class=\"mui-pull-right heji\">合计：￥<span class=\"red\">"+data[i].totalprice+"</span></span>"+
+											"</p>"+
+										"</div>"+
+									"</a>"+
+								"</li>"+
+								"<li class=\"mui-table-view-cell mui-media border_none\">"+
+									"<p class=\"mui-ellipsis\">"+
+										"<span class=\"shenfen\">买手</span>"
+										if(xmlhttp){
+											var releasetime = data[i].releasetime;
+											var newDate    = new Date();
+										    newDate.setTime(releasetime);
+										   // console.log(newDate.toLocaleString());
+										    dingdan+="<span class=\"mui-pull-right shijain\">"+newDate.toLocaleString()+"</span>"
+										}
+									dingdan+="</p>"+
+												"<div class=\"mui-slider-cell\">"+
+													"<div class=\"oa-contact-cell mui-table mui-navigate-right\">"+
+														"<div class=\"oa-contact-avatar mui-table-cell cell-one dingdan_user\">"+
+															"<img src=\""+data[i].img+"\">"+
+															"<p class=\"dingwei_name\">"+data[i].nickname+"</p>"+
+														"</div>"+
+														"<div class=\"oa-contact-content mui-table-cell mui-pull-right\">"+
+															"<p class=\"oa-contact-email mui-h6\">成交时间</p>"+
+															"<div class=\"mui-clearfix\">"
+																if(data[i].statusid == 1){
+																	dingdan+="<h4 class=\"oa-contact-name Cshouhuo\" id=\"shouhuo"+data[i].dityid+"\" onclick=\"shouhuo(this,"+data[i].dityid+")\">待收货</h4>"
+																}else if(data[i].statusid == 2){
+																	dingdan+="<h4 class=\"oa-contact-name Cwancheng\" id=\"wancheng"+data[i].dityid+"\" onclick=\"wancheng(this,"+data[i].dityid+")\">已收货</h4>";
+																}else if(data[i].statusid == 3){
+																	dingdan+="<h4 class=\"oa-contact-name Cpingjia\" id=\"pingjia"+data[i].dityid+"\" onclick=\"pingjia(this,"+data[i].dityid+")\">待评价</h4>";
+																}else if(data[i].statusid == 4){
+																	dingdan+="<h4 class=\"oa-contact-name Ctuihuotuikuan\" id=\"tuihuotuikuan"+data[i].dityid+"\" onclick=\"tuihuotuikuan(this,"+data[i].dityid+")\">退货退款</h4>";
+																}
+															dingdan+="</div>"+
+														"</div>"+
+													"</div>"+
+												"</div>"+
+											"<li>"+
+										"</ul>";
+							dingdanList+=dingdan;
+	            };
+	            document.getElementById("item1").innerHTML= dingdanList;
+	   }
+	};
+	
+	//console.log(apiRoot+"/order/oderAll.do?statusid="+0+','+1+','+2+','+3+','+4+"&token="+token);
+	xmlhttp.open("GET",apiRoot+"/order/oderAll.do?statusid="+statusid+"&token="+token,true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
 		});

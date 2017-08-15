@@ -17,7 +17,8 @@ xmlhttp.onreadystatechange=function(){
         //console.log(data);
             for(var i=0;i<data.length;i++){ 
                 var chtml = '<li>'
-                                +'<a href="fenxiang.html?id='+data[i].id+'">'
+                                // +'<a href="fenxiang.html?id='+data[i].id+'">'
+                                +'<a href="javascript:;" onclick="fenxiang(this,'+data[i].id+')">'
                                     +'<p class="product_picture"><img src="'+data[i].imgs+'"></p>' 
                                     +'<p class="product_np"><span>'+data[i].titles+'</span>'
                                     if(data[i].state == 1){
@@ -63,4 +64,7 @@ function add(obj,id) {
 
         })
     })
+}
+function fenxiang(obj,id){
+    console.log(id);
 }

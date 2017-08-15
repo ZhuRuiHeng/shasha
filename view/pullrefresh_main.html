@@ -134,22 +134,26 @@
 			}] 
 		});
 	
-		var contentWebview = null;
-		document.querySelector('header').addEventListener('doubletap',function () {
-			if(contentWebview==null){
-				contentWebview = plus.webview.currentWebview().children()[0];
-			}
-			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-		});
+		// var contentWebview = null;
+		// document.querySelector('header').addEventListener('doubletap',function () {
+		// 	if(contentWebview==null){
+		// 		contentWebview = plus.webview.currentWebview().children()[0];
+		// 	}
+		// 	contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+		// });
 
 
 		//交互js
+		mui('body').on('tap','a',function(){
+		     id=this.id;
+		     console.log(id);
+		});
+		
 		function setupWebViewJavascriptBridge(callback) {
 		    if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
 		    if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
 		    window.WVJBCallbacks = [callback];
 		    var WVJBIframe = document.createElement('iframe');
-		    WVJBIframe.className = 'new';
 		    WVJBIframe.style.display = 'none';
 		    WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
 		    document.documentElement.appendChild(WVJBIframe);
@@ -162,6 +166,8 @@
 		        })
 		    })
 		}
+			
+
 	</script>
 
 </html>

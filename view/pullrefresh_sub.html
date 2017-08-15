@@ -141,14 +141,11 @@
 					}
 				}
 			});
+
+			
 			/**
 			 * 下拉刷新具体业务实现
 			 */
-			
-
-
-
-
 			function pulldownRefresh() {
 				setTimeout(function() {
 					var xmlhttp;
@@ -170,7 +167,8 @@
 					        for (var i = cells.length, len = i + 3; i < len; i++) {
 					            //for(var i=0;i<data.length;i++){ 
 					                var chtml = '<li class="view-cell">'
-					                                +'<a href="fenxiang.html?id='+data[i].id+'">'
+					                                // +'<a href="fenxiang.html?id='+data[i].id+'">'
+                                						+'<a href="javascript:;" onclick="fenxiang(this,'+data[i].id+')">'
 					                                    +'<p class="product_picture"><img src="'+data[i].imgs+'"></p>' 
 					                                    +'<p class="product_np"><span>'+data[i].titles+'</span>'
 					                                    if(data[i].state == 1){
@@ -232,7 +230,8 @@
 					        for (var i = cells.length, len = i + 5; i < len; i++) {
 					           // for(var i=0;i<data.length;i++){ 
 					                var chtml = '<li class="view-cell">'
-					                                +'<a href="fenxiang.html?id='+data[i].id+'">'
+					                                // +'<a href="fenxiang.html?id='+data[i].id+'">'
+                                						+'<a href="javascript:;"  id="'+data[i].id+'">'
 					                                    +'<p class="product_picture"><img src="'+data[i].imgs+'"></p>' 
 					                                    +'<p class="product_np"><span>'+data[i].titles+'</span>'
 					                                    if(data[i].state == 1){
@@ -307,10 +306,14 @@
 				});
 			}
 			//页面跳转事件委托
-			mui('body').on('tap','a',function(){
-			    window.top.location.href=this.href;
-			});
+			// mui('body').on('tap','a',function(){
+			//     window.top.location.href=this.href;
+			// });
 			
+			mui('body').on('tap','a',function(){
+			     id=this.id;
+			     console.log(id);
+			});
 		</script>
 	</body>
 
